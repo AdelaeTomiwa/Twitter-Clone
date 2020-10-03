@@ -1,0 +1,25 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.container {
+   // max-width: 1120px;
+   width: 95%;
+   margin: auto;
+}
+
+a {
+   color: #333;
+   text-decoration: none;
+}
+
+li {
+   list-style: none;
+}
+
+// EaseOut Transition
+@mixin easeOut {
+   transition: all 0.5s ease-out;
+}

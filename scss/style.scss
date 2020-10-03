@@ -1,0 +1,99 @@
+@import 'config';
+@import 'utilities';
+
+body {
+   background-color: #fff;
+   color: #333;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 16px;
+   line-height: 1.6;
+}
+
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 20%;
+   background-color: #fff;
+   height: 100vh;
+   border-right: 1px solid lighten($secondary-color, 70%);
+
+   .nav {
+      margin: 0 1rem;
+
+      li {
+         font-size: 1.3rem;
+         color: #333;
+         font-weight: bolder;
+
+         a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            @include easeOut;
+
+            &:hover {
+               background-color: #e8f5fe;
+               color: $primary-color;
+            }
+         }
+
+         i {
+            margin-right: 0.7rem;
+            font-weight: 520;
+         }
+      }
+
+      button {
+         width: 100%;
+         background-color: darken($primary-color, 10%);
+         border-radius: 25px;
+         padding: 0.8rem 1rem;
+         border: none;
+         outline: none;
+         font-size: 1rem;
+         font-weight: bolder;
+         margin-top: 1rem;
+         cursor: pointer;
+         @include easeOut;
+
+         a {
+            color: #fff;
+         }
+
+         &:hover {
+            background-color: darken($primary-color, 20%);
+         }
+      }
+
+      .users {
+         margin-top: 35%;
+         display: flex;
+         align-items: center;
+         justify-content: space-around;
+         width: 100%;
+         padding: 0.3rem 0rem;
+         border-radius: 35px;
+         @include easeOut;
+         cursor: pointer;
+
+         img {
+            margin-top: 0;
+            border-radius: 50%;
+         }
+
+         &:hover {
+            background-color: #e8f5fe;
+         }
+      }
+
+      img {
+         width: 50px;
+         margin-top: 1rem;
+      }
+   }
+}
+
+section {
+   margin-left: 20%;
+}
