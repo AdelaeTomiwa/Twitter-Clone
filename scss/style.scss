@@ -1,5 +1,6 @@
 @import 'config';
 @import 'utilities';
+@import 'tweet';
 
 body {
    background-color: #fff;
@@ -79,7 +80,6 @@ header {
 
          img {
             margin-top: 0;
-            border-radius: 50%;
          }
 
          &:hover {
@@ -94,6 +94,13 @@ header {
    }
 }
 
-section {
+.main {
    margin-left: 20%;
+   display: grid;
+   grid-template-areas: 'showcase search-tweet';
+   grid-template-columns: 2fr 1fr;
+
+   .search-tweet {
+      grid-area: search-tweet;
+   }
 }

@@ -19,6 +19,10 @@ li {
    list-style: none;
 }
 
+.rounded-img {
+   border-radius: 50%;
+}
+
 // EaseOut Transition
 @mixin easeOut {
    transition: all 0.5s ease-out;
