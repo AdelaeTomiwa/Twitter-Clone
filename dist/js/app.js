@@ -13,6 +13,36 @@ class UI {
 
       // Loop Through all of them
       tweets.forEach((tweet) => UI.addTweet(tweet));
+
+      UI.addExtras();
+
+      // // Bring in Menu to Tweets
+      // const extraMenus = document.querySelectorAll('.extra');
+      // // Convert to Array
+      // extraMenus.forEach((extraMenu) => {
+      //    extraMenu.addEventListener('click', () => {
+      //       // Change the Icon to Cheron up
+      //       extraMenu.classList.toggle('fa-chevron-up');
+      //       // Grab the Ul and display it on the screen
+      //       const options = document.querySelectorAll('.extra-options-closed');
+      //       // Convert all to Array
+      //       options.forEach((option) => {
+      //          option.classList.toggle('extra-options-open');
+      //       });
+      //       // options.classList.toggle('extra-options-open');
+      //    });
+      // });
+   }
+
+   static addExtras() {
+      // Grab all I tags
+      const chevronsDown = document.querySelectorAll('.chevron-down');
+      chevronsDown.forEach((chevronDown) => {
+         chevronDown.addEventListener('click', (e) => {
+            const extraOptions = e.target.nextElementSibling;
+            extraOptions.classList.toggle('extra-options-open');
+         });
+      });
    }
    // Add Tweet to UI
    static addTweet(newTweet) {
@@ -35,7 +65,51 @@ class UI {
             </div>
          </a>
          <div>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down chevron-down"></i>
+            <ul class="extra-options-closed">
+               <li>
+                  <a href="#">
+                     <i class="fas fa-angry"></i>
+                     Not Interested
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                     <i class="fas fa-user-minus"></i>
+                     Unfollow
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                     <i class="fas fa-list-alt"></i>
+                     Add/Remove From Lists</a
+                  >
+               </li>
+               <li>
+                  <a href="#">
+                     <i class="fas fa-volume-mute"></i>
+                     Mute
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                     <i class="fas fa-exclamation-circle"></i>
+                     Block
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                     <i class="fas fa-code"></i>
+                     Block Embed Tweet
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                     <i class="fas fa-flag"></i>
+                     Report Tweet
+                  </a>
+               </li>
+            </ul>
          </div>
       </div>
       <div class="tweet-body">
@@ -49,7 +123,7 @@ class UI {
          <div class="tweet-body-utilities">
             <i class="fas fa-comment-alt"></i>
             <i class="fas fa-retweet"></i>
-            <i class="fas fa-smile"></i>
+            <i class="fas fa-thumbs-up"></i>
             <i class="fas fa-download"></i>
          </div>
       </div>
@@ -129,3 +203,12 @@ function formSubmitted(e) {
 }
 
 // Delete Tweet
+// Bring in Menu to Tweets
+// const extraMenu = document.querySelector('.extra');
+// extraMenu.addEventListener('click', () => {
+//    // Change the Icon to Cheron up
+//    extraMenu.classList.toggle('fa-chevron-up');
+//    // Grab the Ul and display it on the screen
+//    const options = document.querySelector('.extra-options-closed');
+//    options.classList.toggle('extra-options-open');
+// });

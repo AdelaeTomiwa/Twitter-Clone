@@ -2,15 +2,22 @@
    grid-area: showcase;
    border-right: 1px solid lighten($secondary-color, 70%);
    height: 100vh;
+   position: relative;
+   width: 100%;
 
    &-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 1rem 0;
+      height: 3.5rem;
       border-bottom: 1px solid lighten($secondary-color, 70%);
       padding: 0 2rem 1rem 2rem;
       background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: 20%;
+      width: 53%;
+      z-index: 6;
    }
 
    img {
@@ -20,7 +27,7 @@
 
 .tweet-input {
    background-color: #fff;
-
+   margin-top: 4rem;
    padding-bottom: 0.2rem;
    border-bottom: 1px solid lighten($secondary-color, 70%);
 
@@ -55,7 +62,7 @@
             @include easeOut;
 
             &:hover {
-               background-color: #e8f5fe;
+               background-color: $light-color;
                color: $primary-color;
             }
          }
@@ -81,6 +88,7 @@
    margin-top: 1rem;
 
    .tweet {
+      position: relative;
       border-top: 1px solid lighten($secondary-color, 70%);
       border-bottom: 1px solid lighten($secondary-color, 70%);
       padding: 1rem 0;
@@ -93,6 +101,7 @@
          display: flex;
          align-items: center;
          justify-content: space-between;
+         @include easeOut;
 
          .name {
             display: flex;
@@ -102,6 +111,48 @@
             h4,
             p {
                margin-left: 0.5rem;
+            }
+         }
+
+         i {
+            padding: 0.5rem;
+            border-radius: 50%;
+
+            &:hover {
+               background-color: $light-color;
+               color: $primary-color;
+            }
+         }
+
+         .extra-options-closed {
+            display: none;
+         }
+
+         .extra-options-open {
+            background-color: #fff;
+            padding: 0.5rem;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            font-weight: 400;
+            position: absolute;
+            // top: 0;
+            right: 2%;
+            height: 85%;
+            width: 35%;
+            z-index: inherit;
+            box-shadow: 2px 2px 2px 0px #ccc;
+
+            a {
+               margin: 0.5rem 0;
+               width: 100%;
+               display: inline-block;
+               padding: 0.3rem;
+
+               &:hover {
+                  background-color: lighten($secondary-color, 70%);
+               }
             }
          }
       }
