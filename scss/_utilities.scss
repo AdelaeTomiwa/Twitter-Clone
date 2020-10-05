@@ -23,6 +23,7 @@
    top: 0;
    left: 0;
    z-index: 10;
+   overflow: hidden;
 }
 
 a {
@@ -41,4 +42,35 @@ li {
 // EaseOut Transition
 @mixin easeOut {
    transition: all 0.5s ease-out;
+}
+
+.close-profile-burger {
+   padding: 0.5rem;
+   border-radius: 50%;
+   cursor: pointer;
+   @include easeOut;
+
+   &:hover {
+      background-color: $light-color;
+      color: $primary-color;
+   }
+
+   div {
+      background-color: $primary-color;
+      width: 25px;
+      height: 2px;
+      margin: 0.2rem 0;
+   }
+
+   &-line-1 {
+      transform: rotate(45deg) translate(2px, 5px);
+   }
+
+   &-line-2 {
+      opacity: 0;
+   }
+
+   &-line-3 {
+      transform: rotate(-45deg) translate(2px, -5px);
+   }
 }

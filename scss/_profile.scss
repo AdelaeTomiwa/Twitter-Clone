@@ -118,8 +118,12 @@
    height: 100%;
    width: 40%;
    margin: auto;
-   position: relative;
+   position: absolute;
+   top: 0;
+   left: 30%;
    z-index: 20;
+   background-color: #fff;
+   padding: 0.5rem 1rem;
 
    .edit-profile {
       .edit-profile-section-header {
@@ -139,27 +143,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
-            .close-profile-burger {
-               div {
-                  background-color: $primary-color;
-                  width: 25px;
-                  height: 2px;
-                  margin: 0.2rem 0;
-               }
-
-               &-line-1 {
-                  transform: rotate(45deg) translate(2px, 6px);
-               }
-
-               &-line-2 {
-                  opacity: 0;
-               }
-
-               &-line-3 {
-                  transform: rotate(-45deg) translate(2px, -6px);
-               }
-            }
 
             h3 {
                margin-left: 3rem;
@@ -190,11 +173,14 @@
          cursor: pointer;
          margin-top: 3.5rem;
 
+         .profile-img-cover {
+            position: relative;
+         }
+
          .profile-img-icon {
-            // background-color: white;
             width: 150px;
             position: absolute;
-            bottom: -25%;
+            bottom: -55%;
             left: 3%;
             margin-bottom: 1.5rem;
             @include easeOut;
@@ -216,10 +202,11 @@
       }
 
       form {
-         margin-top: 2rem;
+         margin-top: 3.5rem;
 
          div {
-            margin-bottom: 2.5rem;
+            margin-bottom: 1rem;
+
             input,
             label {
                display: block;
@@ -234,6 +221,10 @@
                border-bottom: 2px solid lighten($secondary-color, 40%);
                font-size: 1.2rem;
             }
+         }
+
+         #edit-website {
+            border: none;
          }
       }
    }

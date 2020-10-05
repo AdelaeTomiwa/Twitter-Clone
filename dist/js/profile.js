@@ -38,6 +38,29 @@ class UI {
       profileUserName.innerHTML = name;
       profileUserSubName.innerHTML = `@${username}`;
    }
+
+   static reNameProfile(formValues) {
+      const reName = Storage.resaveProfile();
+      const username = Storage.getUsername();
+
+      // Set the user Profile at the bottom of the home page of the Profiile Page to the username
+      // Grab the Div with the class of user
+      const profileUserName = document.querySelector('.users h4');
+      profileUserName.innerHTML = formValues.name;
+
+      // Set the Title of the Profiile Page to the name
+      document.title = `${formValues.name} (@${username}) / Twitter`;
+
+      // Set Profile Name
+      const profileName = document.querySelector('.profile-name h3');
+      const profileSubName = document.querySelector('.profile-name p');
+      profileName.innerHTML = formValues.name;
+      profileSubName.innerHTML = `@${username}`;
+
+      // Set the Bio
+      const profileBio = document.querySelector('.profile-bio p');
+      profileBio.innerHTML = formValues.bio;
+   }
 }
 
 // Storage
@@ -61,6 +84,18 @@ class Storage {
          username = JSON.parse(localStorage.getItem('username'));
       }
       return username;
+   }
+
+   static resaveProfile(formValues) {
+      let formsValues;
+      if (localStorage.getItem('profile value') === null) {
+         formsValues = '';
+      } else {
+         formsValues = JSON.parse(localStorage.getItem('form values'));
+      }
+
+      formsValues = formValues;
+      localStorage.setItem('profile values', JSON.stringify(formsValues));
    }
 }
 
@@ -135,11 +170,47 @@ document.querySelector('.edit-profile-btn').addEventListener('click', () => {
    // Append the Form to the Body
    document.body.appendChild(editProfileSection);
 
-   // Instatiate Form
-   // const editProfileForm = new EditProfileForm()
+   // Grab the Burger Class in it
+   const closeBurger = document.querySelector('.close-profile-burger');
+   closeBurger.addEventListener('click', () => {
+      const darkOverlay = document.querySelector('.dark-overlay');
+      darkOverlay.style.display = 'none';
+
+      // Remove the Form to the Body
+      document.body.removeChild(editProfileSection);
+   });
+
+   const editProfileForm = document.querySelector('.edit-profile-form');
+   const saveProfileBtn = document.querySelector('.save-profile-btn');
+   const nameInput = document.querySelector('#edit-name');
+   const bioInput = document.querySelector('#edit-bio');
+   const locationInput = document.querySelector('#edit-location');
+   const websiteInput = document.querySelector('#edit-website');
+   saveProfileBtn.addEventListener('click', (e) => {
+      // Instatiate a new Form
+      const formValues = new EditProfileForm(
+         nameInput.value,
+         bioInput.value,
+         locationInput.value,
+         websiteInput.value
+      );
+
+      // Storage to Local Storage
+      Storage.resaveProfile(formValues);
+
+      // Remove the Edit Profile Section
+      const darkOverlay = document.querySelector('.dark-overlay');
+      darkOverlay.style.display = 'none';
+
+      document.body.removeChild(editProfileSection);
+
+      // Change The Name in The UI
+      UI.reNameProfile(formValues);
+   });
 });
 
 // Selectors
 
 // Function
+
 //
