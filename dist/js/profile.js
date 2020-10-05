@@ -2,23 +2,36 @@
 class UI {
    static displayName() {
       const name = Storage.getName();
+      const username = Storage.getUsername();
       // Set the Title of the Profiile Page to the name
-      console.log(name);
+      document.title = `${name} (@${username}) / Twitter`;
 
-      document.title = `${name} / twitter.com`;
+      // Set Profile Header Name
+      const profileHeaderName = document.querySelector(
+         '.profile-header-name h3'
+      );
+      profileHeaderName.innerHTML = name;
+
+      // Set Profile Name
+      const profileName = document.querySelector('.profile-name h3');
+      const profileSubName = document.querySelector('.profile-name p');
+      profileName.innerHTML = name;
+      profileSubName.innerHTML = `@${username}`;
    }
 
    static displayUsername() {
+      const name = Storage.getName();
       const username = Storage.getUsername();
       // Set the user Profile at the bottom of the home page of the Profiile Page to the username
       // Grab the Div with the class of user
       const profileUserName = document.querySelector('.users h4');
       const profileUserSubName = document.querySelector('.users p');
-      profileUserName.innerHTML = username;
+      profileUserName.innerHTML = name;
       profileUserSubName.innerHTML = `@${username}`;
    }
 }
 
+// Storage
 class Storage {
    static getName(name) {
       let names;
@@ -41,5 +54,10 @@ class Storage {
    }
 }
 
+// Events
 document.addEventListener('DOMContentLoaded', UI.displayName());
 document.addEventListener('DOMContentLoaded', UI.displayUsername());
+
+// Selectors
+
+// Function

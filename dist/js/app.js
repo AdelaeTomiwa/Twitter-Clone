@@ -37,12 +37,13 @@ class UI {
    }
 
    static displayUsername() {
+      const name = Storage.getName();
       const username = Storage.getUsername();
       // Set the user Profile at the bottom of the home page of the Profiile Page to the username
       // Grab the Div with the class of user
       const profileUserName = document.querySelector('.users h4');
       const profileUserSubName = document.querySelector('.users p');
-      profileUserName.innerHTML = username;
+      profileUserName.innerHTML = name;
       profileUserSubName.innerHTML = `@${username}`;
    }
 
@@ -190,6 +191,16 @@ class Storage {
 
       tweets.push(newTweet);
       localStorage.setItem('tweet', JSON.stringify(tweets));
+   }
+
+   static getName(name) {
+      let names;
+      if (localStorage.getItem('name') === null) {
+         names = [];
+      } else {
+         names = JSON.parse(localStorage.getItem('name'));
+      }
+      return names;
    }
 
    static getUsername() {
