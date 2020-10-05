@@ -70,6 +70,7 @@
       .twitter-trend-section {
          width: 100%;
          .trend {
+            position: relative;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
@@ -82,22 +83,55 @@
 
             @include easeOut;
 
-            i {
-               color: lighten($secondary-color, 50%);
-               margin: 0 0.2rem;
-               cursor: pointer;
-               padding: 0.5rem;
-               border-radius: 50%;
-               @include easeOut;
+            .search-trends-extras {
+               i {
+                  color: lighten($secondary-color, 50%);
+                  margin: 0 0.2rem;
+                  cursor: pointer;
+                  padding: 0.5rem;
+                  border-radius: 50%;
+                  @include easeOut;
+
+                  &:hover {
+                     background-color: darken($light-color, 10%);
+                     color: $primary-color;
+                  }
+               }
+
+               .search-trends-extras-options-closed {
+                  display: none;
+               }
+
+               .search-trends-extras-options-open {
+                  background-color: #fff;
+                  padding: 0.5rem;
+                  border-radius: 5px;
+                  display: flex;
+                  flex-direction: column;
+                  text-align: left;
+                  font-weight: 400;
+                  position: absolute;
+                  // top: 0;
+                  right: 2%;
+                  height: 32vh;
+                  width: 55%;
+                  z-index: 6;
+                  box-shadow: 2px 2px 2px 0px #ccc;
+
+                  a {
+                     margin: 0.5rem 0;
+                     width: 100%;
+                     display: inline-block;
+                     padding: 0.3rem;
+
+                     &:hover {
+                        background-color: lighten($secondary-color, 70%);
+                     }
+                  }
+               }
 
                &:hover {
-                  background-color: darken($light-color, 10%);
-                  color: $primary-color;
                }
-            }
-
-            &:hover {
-               opacity: 0.6;
             }
          }
       }

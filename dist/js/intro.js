@@ -21,12 +21,14 @@ class Storage {
    static saveUserName(userName) {
       let userNames;
       if (localStorage.getItem('username') === null) {
-         userNames = [];
+         userNames = '';
       } else {
          userNames = JSON.parse(localStorage.getItem('username'));
       }
 
-      userNames.push(userName);
+      userNames = userName;
+      console.log(userNames);
+
       localStorage.setItem('username', JSON.stringify(userNames));
    }
 }

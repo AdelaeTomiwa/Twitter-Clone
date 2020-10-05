@@ -16,6 +16,8 @@ class UI {
 
       UI.addExtras();
 
+      UI.displaySearchExtras();
+
       // // Bring in Menu to Tweets
       // const extraMenus = document.querySelectorAll('.extra');
       // // Convert to Array
@@ -34,16 +36,6 @@ class UI {
       // });
    }
 
-   static addExtras() {
-      // Grab all I tags
-      const chevronsDown = document.querySelectorAll('.chevron-down');
-      chevronsDown.forEach((chevronDown) => {
-         chevronDown.addEventListener('click', (e) => {
-            const extraOptions = e.target.nextElementSibling;
-            extraOptions.classList.toggle('extra-options-open');
-         });
-      });
-   }
    // Add Tweet to UI
    static addTweet(newTweet) {
       // Create a new Div
@@ -133,6 +125,31 @@ class UI {
       // Append it to the Tweet Section in the HTML
       const tweetSection = document.querySelector('.tweet-section');
       tweetSection.appendChild(tweetDiv);
+   }
+
+   static addExtras() {
+      // Grab all I tags
+      const chevronsDown = document.querySelectorAll('.chevron-down');
+      chevronsDown.forEach((chevronDown) => {
+         chevronDown.addEventListener('click', (e) => {
+            const extraOptions = e.target.nextElementSibling;
+            extraOptions.classList.toggle('extra-options-open');
+         });
+      });
+   }
+
+   // Display the Search Tweets Extra
+   static displaySearchExtras() {
+      // Grab all I tags
+      const chevronsDown = document.querySelectorAll(
+         '.search-trends-extras .fa-chevron-down'
+      );
+      chevronsDown.forEach((chevronDown) => {
+         chevronDown.addEventListener('click', (e) => {
+            const extraOptions = e.target.nextElementSibling;
+            extraOptions.classList.toggle('search-trends-extras-options-open');
+         });
+      });
    }
    // Clear Input Fields
    static clearFields() {
