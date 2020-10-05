@@ -1,0 +1,105 @@
+.search-tweet {
+   grid-area: search-tweet;
+   height: 100vh;
+   position: relative;
+   width: 100%;
+
+   &-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3.5rem;
+      width: 27%;
+      border-bottom: 1px solid lighten($secondary-color, 70%);
+      padding: 1rem 1rem;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      z-index: 6;
+
+      div {
+         position: relative;
+         width: 100%;
+      }
+
+      input {
+         width: 100%;
+         padding: 0.7rem 3rem;
+         border-radius: 20px;
+         border: none;
+         outline: none;
+         background-color: $light-color;
+         font-size: 1rem;
+      }
+
+      i {
+         position: absolute;
+         top: 27%;
+         left: 3%;
+         color: $primary-color;
+      }
+   }
+
+   .twitter-trends {
+      margin-top: 4rem;
+      background-color: $light-color;
+      border-radius: 20px;
+
+      .twitter-trend-head {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 0.5rem 1rem;
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+
+         i {
+            color: $primary-color;
+            margin: 0 0.2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            @include easeOut;
+
+            &:hover {
+               background-color: darken($light-color, 10%);
+            }
+         }
+      }
+
+      .twitter-trend-section {
+         width: 100%;
+         .trend {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.3rem;
+            cursor: pointer;
+            height: 100%;
+            border-bottom: 1px solid lighten($secondary-color, 70%);
+
+            @include easeOut;
+
+            i {
+               color: lighten($secondary-color, 50%);
+               margin: 0 0.2rem;
+               cursor: pointer;
+               padding: 0.5rem;
+               border-radius: 50%;
+               @include easeOut;
+
+               &:hover {
+                  background-color: darken($light-color, 10%);
+                  color: $primary-color;
+               }
+            }
+
+            &:hover {
+               opacity: 0.6;
+            }
+         }
+      }
+   }
+}

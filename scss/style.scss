@@ -1,5 +1,6 @@
 @import 'config';
 @import 'utilities';
+@import 'search-tweets';
 @import 'tweet';
 @import 'forms';
 
@@ -119,8 +120,4 @@ header {
    grid-template-areas: 'showcase search-tweet';
    grid-template-columns: 2fr 1fr;
    width: 80%;
-
-   .search-tweet {
-      grid-area: search-tweet;
-   }
 }
