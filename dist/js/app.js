@@ -36,6 +36,16 @@ class UI {
       // });
    }
 
+   static displayUsername() {
+      const username = Storage.getUsername();
+      // Set the user Profile at the bottom of the home page of the Profiile Page to the username
+      // Grab the Div with the class of user
+      const profileUserName = document.querySelector('.users h4');
+      const profileUserSubName = document.querySelector('.users p');
+      profileUserName.innerHTML = username;
+      profileUserSubName.innerHTML = `@${username}`;
+   }
+
    // Add Tweet to UI
    static addTweet(newTweet) {
       // Create a new Div
@@ -181,10 +191,21 @@ class Storage {
       tweets.push(newTweet);
       localStorage.setItem('tweet', JSON.stringify(tweets));
    }
+
+   static getUsername() {
+      let username;
+      if (localStorage.getItem('username') === null) {
+         username = [];
+      } else {
+         username = JSON.parse(localStorage.getItem('username'));
+      }
+      return username;
+   }
 }
 
 // Display Old Tweets
 document.addEventListener('DOMContentLoaded', UI.getTweets);
+document.addEventListener('DOMContentLoaded', UI.displayUsername());
 
 // Add Tweet
 // Selectors
