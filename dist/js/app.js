@@ -49,6 +49,12 @@ class UI {
 
    // Add Tweet to UI
    static addTweet(newTweet) {
+      // Grab the name of the person
+      const name = Storage.getName();
+
+      // Grab the Username of the Person
+      const username = Storage.getUsername();
+
       // Create a new Div
       const tweetDiv = document.createElement('div');
       tweetDiv.classList.add('tweet');
@@ -62,8 +68,8 @@ class UI {
                   src="img/user-one.jpg"
                   alt=""
                />
-               <h4>Cristiano Ronaldo</h4>
-               <p>@cristiano</p>
+               <h4>${name}</h4>
+               <p>@${username}</p>
                <p>.15h</p>
             </div>
          </a>
@@ -125,8 +131,8 @@ class UI {
 
          <div class="tweet-body-utilities">
             <i class="fas fa-comment-alt"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="fas fa-heart"></i>
+            <i class="fas fa-retweet retweet"></i>
+            <i class="fas fa-heart like"></i>
             <i class="fas fa-download"></i>
          </div>
       </div>

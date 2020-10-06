@@ -168,6 +168,28 @@
             justify-content: space-between;
 
             i {
+               padding: 0.5rem;
+               border-radius: 50%;
+               @include easeOut;
+
+               &:hover {
+                  background-color: $light-color;
+                  color: $primary-color;
+               }
+            }
+
+            .like {
+               &:hover {
+                  background-color: lighten($danger-color, 30%);
+                  color: $danger-color;
+               }
+            }
+
+            .retweet {
+               &:hover {
+                  background-color: lighten($success-color, 40%);
+                  color: $success-color;
+               }
             }
          }
 

@@ -101,15 +101,17 @@
          </div>
       </header>
 
-      <section class="main-profile">
+      <section class="main-profile" id="main-profile">
          <div class="profile">
-            <div class="profile-header">
-               <i class="fas fa-arrow-left"></i>
-               <div class="profile-header-name">
-                  <h3></h3>
-                  <small>99 Tweets</small>
+            <a href="#main-profile">
+               <div class="profile-header">
+                  <i class="fas fa-arrow-left"></i>
+                  <div class="profile-header-name">
+                     <h3></h3>
+                     <small>99 Tweets</small>
+                  </div>
                </div>
-            </div>
+            </a>
             <div class="profile-image">
                <div class="profile-img-cover">
                   <img src="img/user-profile-cover.png" alt="" />
@@ -141,6 +143,35 @@
                      <h4>Edit Profile</h4>
                   </button>
                </div>
+            </div>
+
+            <div class="profile-content">
+               <div class="profile-content-header">
+                  <div class="tweet-content">
+                     <a
+                        class="profile-tweet-btn current"
+                        href="#profile-tweet-section"
+                     >
+                        Tweets
+                     </a>
+                  </div>
+                  <div class="tweets&replies-content">
+                     <a class="profile-tweets&replies-btn" href="#">
+                        Tweets & Replies
+                     </a>
+                  </div>
+                  <div class="media-content">
+                     <a class="profile-media-btn" href="#">Media</a>
+                  </div>
+                  <div class="likes-content">
+                     <a class="profile-likes-btn" href="#">Likes</a>
+                  </div>
+               </div>
+
+               <section
+                  class="profile-tweet-section"
+                  id="profile-tweet-section"
+               ></section>
             </div>
          </div>
 
