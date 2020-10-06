@@ -43,13 +43,32 @@ header {
    .nav {
       margin: 0 1rem;
 
+      .twitter-icon {
+         width: 50px;
+         margin-top: 1rem;
+         border-radius: 50%;
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         @include easeOut;
+
+         img {
+            width: 50px;
+            // padding: 0.1rem;
+         }
+
+         &:hover {
+            background-color: $light-color;
+         }
+      }
+
       li {
-         font-size: 1.3rem;
          color: #333;
-         font-weight: bolder;
 
          a {
-            display: inline-block;
+            display: flex;
+            align-items: center;
             padding: 0.5rem 1rem;
             border-radius: 25px;
             @include easeOut;
@@ -66,25 +85,32 @@ header {
          }
       }
 
-      button {
-         width: 100%;
-         background-color: darken($primary-color, 10%);
-         border-radius: 25px;
-         padding: 0.8rem 1rem;
-         border: none;
-         outline: none;
-         font-size: 1rem;
-         font-weight: bolder;
-         margin-top: 1rem;
-         cursor: pointer;
-         @include easeOut;
-
-         a {
-            color: #fff;
+      .tweet-btn {
+         img {
+            border-radius: 50%;
+            display: none;
          }
 
-         &:hover {
-            background-color: darken($primary-color, 20%);
+         button {
+            width: 100%;
+            background-color: darken($primary-color, 10%);
+            border-radius: 25px;
+            padding: 0.8rem 1rem;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            font-weight: bolder;
+            margin-top: 1rem;
+            cursor: pointer;
+            @include easeOut;
+
+            a {
+               color: #fff;
+            }
+
+            &:hover {
+               background-color: darken($primary-color, 20%);
+            }
          }
       }
 
@@ -94,13 +120,14 @@ header {
          align-items: center;
          justify-content: space-around;
          width: 100%;
-         padding: 0.3rem 0rem;
+         padding: 0.5rem 0rem;
          border-radius: 35px;
          @include easeOut;
          cursor: pointer;
 
          img {
             margin-top: 0;
+            padding: 0.5rem;
          }
 
          &:hover {
@@ -122,3 +149,5 @@ header {
    grid-template-columns: 2fr 1fr;
    width: 80%;
 }
+
+@import 'mobile';

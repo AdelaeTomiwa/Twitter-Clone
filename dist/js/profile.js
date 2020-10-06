@@ -43,6 +43,12 @@ class UI {
       const reName = Storage.resaveProfile();
       const username = Storage.getUsername();
 
+      // Set Profile Header Name
+      const profileHeaderName = document.querySelector(
+         '.profile-header-name h3'
+      );
+      profileHeaderName.innerHTML = formValues.name;
+
       // Set the user Profile at the bottom of the home page of the Profiile Page to the username
       // Grab the Div with the class of user
       const profileUserName = document.querySelector('.users h4');

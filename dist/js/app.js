@@ -126,7 +126,7 @@ class UI {
          <div class="tweet-body-utilities">
             <i class="fas fa-comment-alt"></i>
             <i class="fas fa-retweet"></i>
-            <i class="fas fa-thumbs-up"></i>
+            <i class="fas fa-heart"></i>
             <i class="fas fa-download"></i>
          </div>
       </div>
