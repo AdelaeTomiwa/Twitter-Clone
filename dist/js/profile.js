@@ -69,7 +69,7 @@ class UI {
       profileBio.innerHTML = formValues.bio;
    }
 
-   // Display Tweets From Local Storage
+   // Display Profile Tweets From Local Storage
    static displayTweetsFromLocalStorage() {
       const tweets = Storage.getTweetsFromLocalStorage();
       // Grab the name
@@ -156,6 +156,174 @@ class UI {
       UI.addExtras();
    }
 
+   // Display Tweets For Tweets and Reply Page
+   static displayTweetsForTweetsRepliesFromLocalStorage() {
+      const tweets = Storage.getTweetsFromLocalStorage();
+      // Grab the name
+      const name = Storage.getName();
+      // Grab the Username
+      const username = Storage.getUsername();
+
+      // Loop Through all of them
+      tweets.forEach((tweet) => {
+         // Recreate what I did in the App.js (Home Page)
+         const profileTweetRepliesDiv = document.createElement('div');
+         profileTweetRepliesDiv.classList.add('profile-tweet');
+         profileTweetRepliesDiv.innerHTML = `
+            <div class="container">
+               <div class="profile-tweet-head">
+                  <a href="#">
+                     <div class="name">
+                        <img
+                           class="rounded-img"
+                           src="img/user-one.jpg"
+                           alt=""
+                        />
+                        <h4>${name}</h4>
+                        <p>@${username}</p>
+                        <p>.15h</p>
+                     </div>
+                  </a>
+                  <div>
+                     <i class="fas fa-chevron-down chevron-down"></i>
+                     <ul class="extra-options-closed">
+                        <li>
+                           <a class ="delete" href="#">
+                              <i class="fas fa-trash "></i>
+                              Delete
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fas fa-thumbtack"></i>
+                              Pin To Your Profile
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fas fa-code"></i>
+                              Embed Tweet
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fas fa-chart-bar"></i>
+                              View Activity
+                           </a>
+                        </li>
+                     </ul>
+               </div>
+            </div>
+            <div class="profile-tweet-body">
+               <div class="text">
+                 ${tweet.tweet}
+               </div>
+               <div class="post-img">
+                  <img src="img/user-one.jpg" alt="" />
+               </div>
+
+               <div class="profile-tweet-body-utilities">
+                  <i class="fas fa-comment-alt"></i>
+                  <i class="fas fa-retweet retweet"></i>
+                  <i class="fas fa-heart like"></i>
+                  <i class="fas fa-download"></i>
+               </div>
+            </div>
+         </div>
+         `;
+
+         // Append to the Profile Tweet and Replies Div to the Profile Tweets and Replies Section in the HTML
+         const profileTweetRepliesSection = document.querySelector(
+            '.profile-tweet-replies-section'
+         );
+         profileTweetRepliesSection.appendChild(profileTweetRepliesDiv);
+      });
+   }
+
+   // Display Tweets For Media Page
+   static displayTweetsForMediaFromLocalStorage() {
+      const tweets = Storage.getTweetsFromLocalStorage();
+      // Grab the name
+      const name = Storage.getName();
+      // Grab the Username
+      const username = Storage.getUsername();
+
+      // Loop Through all of them
+      tweets.forEach((tweet) => {
+         // Recreate what I did in the App.js (Home Page)
+         const profileMediaDiv = document.createElement('div');
+         profileMediaDiv.classList.add('profile-tweet');
+         profileMediaDiv.innerHTML = `
+            <div class="container">
+               <div class="profile-tweet-head">
+                  <a href="#">
+                     <div class="name">
+                        <img
+                           class="rounded-img"
+                           src="img/user-one.jpg"
+                           alt=""
+                        />
+                        <h4>${name}</h4>
+                        <p>@${username}</p>
+                        <p>.15h</p>
+                     </div>
+                  </a>
+                  <div>
+                     <i class="fas fa-chevron-down chevron-down"></i>
+                     <ul class="extra-options-closed">
+                        <li>
+                           <a class ="delete" href="#">
+                              <i class="fas fa-trash "></i>
+                              Delete
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fas fa-thumbtack"></i>
+                              Pin To Your Profile
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fas fa-code"></i>
+                              Embed Tweet
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fas fa-chart-bar"></i>
+                              View Activity
+                           </a>
+                        </li>
+                     </ul>
+               </div>
+            </div>
+            <div class="profile-tweet-body">
+               <div class="text">
+                 ${tweet.tweet}
+               </div>
+               <div class="post-img">
+                  <img src="img/user-one.jpg" alt="" />
+               </div>
+
+               <div class="profile-tweet-body-utilities">
+                  <i class="fas fa-comment-alt"></i>
+                  <i class="fas fa-retweet retweet"></i>
+                  <i class="fas fa-heart like"></i>
+                  <i class="fas fa-download"></i>
+               </div>
+            </div>
+         </div>
+         `;
+
+         // Append to the Profile Tweet and Replies Div to the Profile Tweets and Replies Section in the HTML
+         const profileMediaSection = document.querySelector(
+            '.profile-media-section'
+         );
+         profileMediaSection.appendChild(profileMediaDiv);
+      });
+   }
+
    static addExtras() {
       const chevronsDown = document.querySelectorAll('.chevron-down');
       chevronsDown.forEach((chevronDown) => {
@@ -164,6 +332,133 @@ class UI {
             extraOptions.classList.toggle('extra-options-open');
          });
       });
+   }
+
+   static displayTweetsPage(e) {
+      // Add the Border to the Tweet Button
+      const tweetBtn = e.target;
+      tweetBtn.classList.add('current');
+      tweetBtn.style.borderBottom = '2px solid #5da9dd';
+      // // Make the Tweet & Replies Section, Media Section and Likes  display None;
+      const tweetRepliesSection = document.querySelector(
+         '.profile-tweet-replies-section'
+      );
+      const mediaSection = document.querySelector('.profile-media-section');
+      const likesSection = document.querySelector('.profile-likes-section');
+      tweetRepliesSection.style.display = 'none';
+      mediaSection.style.display = 'none';
+      likesSection.style.display = 'none';
+      // Remove the Blue Border from Everything Else
+      const tweetReplyBtn = document.querySelector('.tweets-replies-content');
+      const mediaBtn = document.querySelector('.media-content');
+      const likeBtn = document.querySelector('.likes-content');
+      // // Remove The Class Of Current
+      tweetReplyBtn.classList.remove('current');
+      mediaBtn.classList.remove('current');
+      likeBtn.classList.remove('current');
+      // Remove The Border Bottom
+      tweetReplyBtn.style.borderBottom = 'none';
+      mediaBtn.style.borderBottom = 'none';
+      likeBtn.style.borderBottom = 'none';
+      // Make the Tweet Section Display Block
+      const tweetSection = document.querySelector('.profile-tweet-section');
+      tweetSection.style.display = 'block';
+   }
+
+   static displayTweetsRepliesPage(e) {
+      // Add The Class Of Current
+      const tweetReplyBtn = e.target;
+      tweetReplyBtn.classList.add('current');
+      tweetReplyBtn.style.borderBottom = '2px solid #5da9dd';
+      // Make the Tweet Section, Media Section and Likes  display None;
+      const tweetSection = document.querySelector('.profile-tweet-section');
+      const mediaSection = document.querySelector('.profile-media-section');
+      const likesSection = document.querySelector('.profile-likes-section');
+      // Make Them Displayed None
+      tweetSection.style.display = 'none';
+      mediaSection.style.display = 'none';
+      likesSection.style.display = 'none';
+      // Remove the Blue Border below it
+      const tweetBtn = document.querySelector('.tweet-content');
+      const mediaBtn = document.querySelector('.media-content');
+      const likeBtn = document.querySelector('.likes-content');
+      // Remove the Class Of Current
+      tweetBtn.classList.remove('current');
+      mediaBtn.classList.remove('current');
+      likeBtn.classList.remove('current');
+      // // Remove The Border
+      tweetBtn.style.borderBottom = 'none';
+      mediaBtn.style.borderBottom = 'none';
+      likeBtn.style.borderBottom = 'none';
+      // Make The Tweet Replies Section Displayed Block
+      const tweetRepliesSection = document.querySelector(
+         '.profile-tweet-replies-section'
+      );
+      tweetRepliesSection.style.display = 'block';
+   }
+
+   static displayMediaPage(e) {
+      // Add the Class of Current
+      const mediaBtn = e.target;
+      mediaBtn.classList.add('current');
+      mediaBtn.style.borderBottom = '2px solid #5da9dd';
+      // Make the Tweet Section, Tweet and Replies Section and Likes Section  display None;
+      const tweetSection = document.querySelector('.profile-tweet-section');
+      const tweetRepliesSection = document.querySelector(
+         '.profile-tweet-replies-section'
+      );
+      const likesSection = document.querySelector('.profile-likes-section');
+      // Display them as None
+      tweetSection.style.display = 'none';
+      tweetRepliesSection.style.display = 'none';
+      likesSection.style.display = 'none';
+      // Remove the Blue Border below Every Everything
+      const tweetBtn = document.querySelector('.tweet-content');
+      const tweetReplyBtn = document.querySelector('.tweets-replies-content');
+      const likeBtn = document.querySelector('.likes-content');
+      // Remove The Class Of Current
+      tweetBtn.classList.remove('current');
+      tweetReplyBtn.classList.remove('current');
+      likeBtn.classList.remove('current');
+      // Remove The Border Bottom
+      tweetBtn.style.borderBottom = 'none';
+      tweetReplyBtn.style.borderBottom = 'none';
+      likeBtn.style.borderBottom = 'none';
+      // Make Media Section Displayed Block
+      const mediaSection = document.querySelector('.profile-media-section');
+      mediaSection.style.display = 'block';
+   }
+
+   static displayLikesPage(e) {
+      // Add the Class of Current
+      const likeBtn = e.target;
+      likeBtn.classList.add('current');
+      likeBtn.style.borderBottom = '2px solid #5da9dd';
+      // Make the Tweet Section, Tweet and Replies Section and Media Section  display None;
+      const tweetSection = document.querySelector('.profile-tweet-section');
+      const tweetRepliesSection = document.querySelector(
+         '.profile-tweet-replies-section'
+      );
+      const mediaSection = document.querySelector('.profile-media-section');
+      // Display them as None
+      tweetSection.style.display = 'none';
+      tweetRepliesSection.style.display = 'none';
+      mediaSection.style.display = 'none';
+      // Remove the Blue Border below Every Everything
+      const tweetBtn = document.querySelector('.tweet-content');
+      const tweetReplyBtn = document.querySelector('.tweets-replies-content');
+      const mediaBtn = document.querySelector('.media-content');
+      // Remove The Class Of Current
+      tweetBtn.classList.remove('current');
+      tweetReplyBtn.classList.remove('current');
+      mediaBtn.classList.remove('current');
+      // Remove The Border Bottom
+      tweetBtn.style.borderBottom = 'none';
+      tweetReplyBtn.style.borderBottom = 'none';
+      mediaBtn.style.borderBottom = 'none';
+      // Make Like Section Displayed Block
+      const likeSection = document.querySelector('.profile-likes-section');
+      likeSection.style.display = 'block';
    }
 }
 
@@ -220,6 +515,14 @@ document.addEventListener('DOMContentLoaded', UI.displayUsername());
 document.addEventListener(
    'DOMContentLoaded',
    UI.displayTweetsFromLocalStorage()
+);
+document.addEventListener(
+   'DOMContentLoaded',
+   UI.displayTweetsForTweetsRepliesFromLocalStorage()
+);
+document.addEventListener(
+   'DOMContentLoaded',
+   UI.displayTweetsForMediaFromLocalStorage()
 );
 // Events for going back to the home page
 document.querySelector('.profile-header i').addEventListener('click', () => {
@@ -335,6 +638,30 @@ document.querySelector('.edit-profile-btn').addEventListener('click', () => {
 });
 
 // Function
-// Tweet Btn Function
+// Tweet Btn
+const tweetBtn = document.querySelector('.tweet-content');
+tweetBtn.addEventListener('click', (e) => {
+   UI.displayTweetsPage(e);
+});
+
+// Tweet and Replies Btn Function
+const tweetRepliesBtn = document.querySelector('.tweets-replies-content');
+tweetRepliesBtn.addEventListener('click', (e) => {
+   UI.displayTweetsRepliesPage(e);
+
+   // UI.displayTweetsForTweetsRepliesFromLocalStorage();
+});
+
+// Media Btn Function
+const mediaBtn = document.querySelector('.media-content');
+mediaBtn.addEventListener('click', (e) => {
+   UI.displayMediaPage(e);
+});
+
+// Likes Btn Function
+const likeBtn = document.querySelector('.likes-content');
+likeBtn.addEventListener('click', (e) => {
+   UI.displayLikesPage(e);
+});
 
 //
