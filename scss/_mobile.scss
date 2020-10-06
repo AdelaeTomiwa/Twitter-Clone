@@ -2,42 +2,27 @@
 @media screen and (max-width: 1230px) {
    // Headers
    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
       position: fixed;
       top: 0;
       left: 4%;
       width: 10%;
-      background-color: #fff;
-      height: 100vh;
-      border-right: 1px solid lighten($secondary-color, 70%);
 
       .nav {
          margin-right: 1rem;
 
          .nav-items {
             margin-top: 1.5rem;
+
             h3 {
                display: none;
             }
          }
 
          li {
-            // color: #333;
-
             a {
                display: flex;
                align-items: center;
                justify-content: center;
-               border-radius: 25px;
-               @include easeOut;
-
-               &:hover {
-                  background-color: $light-color;
-                  color: $primary-color;
-               }
             }
 
             i {
@@ -45,26 +30,12 @@
                font-size: 1.2rem;
                cursor: pointer;
                padding: 0.2rem;
-               border-radius: 50%;
-               @include easeOut;
-
-               &:hover {
-                  background-color: $light-color;
-                  color: $primary-color;
-               }
             }
          }
 
          .tweet-btn {
             button {
                background-color: #fff;
-               border-radius: 50%;
-               padding: 0.8rem 1rem;
-               border: none;
-               outline: none;
-               margin-top: 1rem;
-               cursor: pointer;
-               @include easeOut;
 
                img {
                   display: block;
@@ -74,75 +45,130 @@
                h4 {
                   display: none;
                }
-
-               a {
-               }
-
-               &:hover {
-                  background-color: #fff;
-               }
             }
          }
 
          .users {
             margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
             width: 100%;
-            padding: 0.3rem 0rem;
-            border-radius: 35px;
-            @include easeOut;
-            cursor: pointer;
 
             h4,
             p {
                display: none;
             }
-
-            img {
-               margin-top: 0;
-            }
-
-            &:hover {
-               background-color: $light-color;
-            }
-         }
-
-         img {
-            width: 50px;
-            margin-top: 1rem;
          }
       }
    }
 
    .main {
       margin-left: 14%;
-      display: grid;
-      grid-template-areas: 'showcase search-tweet';
-      grid-template-columns: 2fr 1fr;
       width: 85%;
    }
-   .showcase {
-      grid-area: showcase;
-      border-right: 1px solid lighten($secondary-color, 70%);
-      height: 100vh;
-      position: relative;
-      width: 100%;
 
-      &-header {
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-         height: 3.5rem;
-         border-bottom: 1px solid lighten($secondary-color, 70%);
-         padding: 0 2rem 1rem 2rem;
-         background-color: #fff;
+   .main-profile {
+      margin-left: 14%;
+      width: 85%;
+   }
+
+   .profile {
+      .profile-header {
+         border-right: none;
+         padding: 1rem 2rem;
          position: fixed;
          top: 0;
          left: 14%;
-         width: 57%;
-         z-index: 6;
+         width: 54%;
+
+         .profile-header-name {
+            cursor: pointer;
+            padding-left: 0rem;
+         }
+      }
+
+      .profile-image {
+         .profile-img-icon {
+            position: absolute;
+            bottom: -30%;
+            left: 3%;
+
+            img {
+               width: 120px;
+            }
+         }
+      }
+   }
+
+   .showcase {
+      width: 100%;
+
+      &-header {
+         position: fixed;
+         top: 0;
+         left: 14%;
+         width: 56%;
+      }
+   }
+
+   .edit-profile-section {
+      width: 60%;
+      position: absolute;
+      top: 0;
+      left: 20%;
+
+      .edit-profile {
+         .edit-profile-section-header {
+            width: 60%;
+            position: fixed;
+            top: 0;
+            left: 20%;
+         }
+
+         .profile-image {
+            position: relative;
+            cursor: pointer;
+            margin-top: 3.5rem;
+
+            .profile-img-cover {
+               position: relative;
+            }
+
+            .profile-img-icon {
+               bottom: -40%;
+               left: 3%;
+            }
+         }
+      }
+   }
+}
+
+// Medium-Large
+@media screen and (max-width: 980px) {
+   .profile {
+      .profile-header {
+         border-right: none;
+         width: 48%;
+      }
+
+      .profile-image {
+         .profile-img-icon {
+            position: absolute;
+            bottom: -35%;
+            left: 3%;
+
+            img {
+               width: 100px;
+            }
+         }
+
+         img {
+            width: 100%;
+         }
+      }
+
+      .profile-info {
+         .profile-name-bio {
+            margin-top: 2rem;
+         }
       }
    }
 }
@@ -155,8 +181,6 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      text-align: center;
-      height: 100vh;
       width: 100%;
       overflow: hidden;
 
@@ -171,7 +195,6 @@
 
    .forms {
       width: 50%;
-      margin: auto;
 
       .register-form-one,
       .register-form-two,
@@ -217,6 +240,19 @@
       }
    }
 
+   // Headers
+   header {
+      .nav {
+         .explore {
+            display: none;
+         }
+
+         .explore-alt {
+            display: block;
+         }
+      }
+   }
+
    // Search Tweets
    .search-tweet {
       display: none;
@@ -224,33 +260,29 @@
 
    .main {
       margin-left: 14%;
-      display: grid;
-      grid-template-areas: 'showcase search-tweet';
+      grid-template-columns: 6fr 1fr;
+      width: 85%;
+   }
+
+   .profile-search-tweet {
+      display: none;
+   }
+
+   .main-profile {
+      margin-left: 14%;
       grid-template-columns: 6fr 1fr;
       width: 85%;
    }
 
    .showcase {
-      grid-area: showcase;
-      border-right: 1px solid lighten($secondary-color, 70%);
-      height: 100vh;
-      position: relative;
       width: 100%;
 
       &-header {
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-         height: 3.5rem;
-         border-bottom: 1px solid lighten($secondary-color, 70%);
          border-right: 1px solid lighten($secondary-color, 70%);
-         padding: 0 2rem 1rem 2rem;
-         background-color: #fff;
          position: fixed;
          top: 0;
          left: 14%;
          width: 73%;
-         z-index: 6;
       }
    }
 }
@@ -260,14 +292,11 @@
    // Headers
 
    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
       position: fixed;
       top: 0;
-      left: 1%;
-      width: 15%;
+      left: 0;
+      width: 13%;
+      margin-right: 1rem;
 
       .nav {
          .tweet-btn {
@@ -278,6 +307,95 @@
                }
             }
          }
+      }
+   }
+
+   .main {
+      margin-left: 14%;
+      grid-template-columns: 1fr;
+      width: 85%;
+   }
+
+   .main-profile {
+      margin-left: 14%;
+      grid-template-columns: 1fr;
+      width: 85%;
+   }
+
+   .profile {
+      width: 100%;
+
+      .profile-header {
+         position: fixed;
+         top: 0;
+         left: 14%;
+         width: 100%;
+         z-index: 6;
+
+         .profile-header-name {
+            padding-left: 0rem;
+         }
+      }
+
+      .profile-image {
+         margin-top: 3.5rem;
+         position: relative;
+         cursor: pointer;
+
+         .profile-img-icon {
+            position: absolute;
+            bottom: -35%;
+            left: 3%;
+
+            img {
+               width: 100px;
+            }
+         }
+      }
+   }
+
+   .edit-profile-section {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .edit-profile {
+         .edit-profile-section-header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+         }
+
+         .profile-image {
+            .profile-img-cover {
+               position: relative;
+            }
+
+            .profile-img-icon {
+               position: absolute;
+               bottom: -50%;
+               @include easeOut;
+
+               img {
+                  width: 100px;
+               }
+            }
+         }
+      }
+   }
+
+   .showcase {
+      position: relative;
+      width: 100%;
+
+      &-header {
+         border-right: none;
+         position: fixed;
+         top: 0;
+         left: 14%;
+         width: 86%;
       }
    }
 }

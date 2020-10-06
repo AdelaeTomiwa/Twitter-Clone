@@ -4,6 +4,7 @@
    grid-template-areas: 'profile profile-search-tweet';
    grid-template-columns: 2fr 1fr;
    width: 80%;
+   border-right: 1px solid lighten($secondary-color, 70%);
 }
 
 .profile {
@@ -19,6 +20,7 @@
       justify-content: flex-start;
       height: 3.5rem;
       border-bottom: 1px solid lighten($secondary-color, 70%);
+      border-right: 1px solid lighten($secondary-color, 70%);
       padding: 1rem 2rem;
       background-color: #fff;
       position: fixed;

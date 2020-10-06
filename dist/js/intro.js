@@ -90,6 +90,7 @@ function signUp(e) {
 
       // Go the next sign up
       setTimeout(function () {
+         registerFormOne.style.display = 'none';
          registerFormUsername.style.display = 'block';
       }, 1500);
    }
@@ -108,6 +109,7 @@ function continueSignUpOne(e) {
 
       // Go the next sign up
       setTimeout(function () {
+         registerFormUsername.style.display = 'none';
          registerFormTwo.style.display = 'block';
       }, 1500);
    }

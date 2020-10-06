@@ -1,8 +1,9 @@
 @import 'config';
 @import 'utilities';
-@import 'search-tweets';
 @import 'tweet';
+@import 'search-tweets';
 @import 'profile';
+@import 'profile-search-tweets';
 @import 'forms';
 
 body {
@@ -61,6 +62,10 @@ header {
          &:hover {
             background-color: $light-color;
          }
+      }
+
+      .explore-alt {
+         display: none;
       }
 
       li {
@@ -151,3 +156,4 @@ header {
 }
 
 @import 'mobile';
+@import 'mobile-smart-phones';

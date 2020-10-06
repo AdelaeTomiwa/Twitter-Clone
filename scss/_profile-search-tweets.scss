@@ -1,0 +1,158 @@
+.profile-search-tweet {
+   grid-area: profile-search-tweet;
+   // height: 100vh;
+   position: relative;
+   width: 100%;
+
+   &-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3.5rem;
+      width: 27%;
+      padding: 1rem 1rem;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 6;
+
+      div {
+         position: relative;
+         width: 100%;
+      }
+
+      input {
+         width: 100%;
+         padding: 0.7rem 3rem;
+         border-radius: 20px;
+         border: none;
+         outline: none;
+         background-color: $light-color;
+         font-size: 1rem;
+      }
+
+      i {
+         position: absolute;
+         top: 27%;
+         left: 3%;
+         color: lighten($secondary-color, 40%);
+      }
+   }
+
+   .twitter-trends-images {
+      margin: 4rem 0.5rem 0 0.5rem;
+      display: grid;
+      grid-gap: 2px;
+      grid-template-columns: repeat(3, 1fr);
+      background-color: $light-color;
+      padding: 1rem;
+      border-radius: 20px;
+
+      .trends-image {
+         width: 100px;
+         cursor: pointer;
+         img {
+            width: 100px;
+            height: 80px;
+         }
+      }
+   }
+
+   // .twitter-trends {
+   //    margin-top: 4rem;
+   //    background-color: $light-color;
+   //    border-radius: 20px;
+
+   //    .twitter-trend-head {
+   //       display: flex;
+   //       align-items: center;
+   //       justify-content: space-between;
+   //       padding: 0.5rem 1rem;
+   //       border-bottom: 1px solid lighten($secondary-color, 70%);
+
+   //       i {
+   //          color: $primary-color;
+   //          margin: 0 0.2rem;
+   //          font-size: 1.2rem;
+   //          cursor: pointer;
+   //          padding: 0.5rem;
+   //          border-radius: 50%;
+   //          @include easeOut;
+
+   //          &:hover {
+   //             background-color: darken($light-color, 10%);
+   //          }
+   //       }
+   //    }
+
+   //    .twitter-trend-section {
+   //       width: 100%;
+   //       .trend {
+   //          position: relative;
+   //          display: flex;
+   //          align-items: flex-start;
+   //          justify-content: space-between;
+   //          width: 100%;
+   //          margin: 0.5rem 0;
+   //          padding: 0.3rem;
+   //          cursor: pointer;
+   //          height: 100%;
+   //          border-bottom: 1px solid lighten($secondary-color, 70%);
+
+   //          @include easeOut;
+
+   //          .search-trends-extras {
+   //             i {
+   //                color: lighten($secondary-color, 50%);
+   //                margin: 0 0.2rem;
+   //                cursor: pointer;
+   //                padding: 0.5rem;
+   //                border-radius: 50%;
+   //                @include easeOut;
+
+   //                &:hover {
+   //                   background-color: darken($light-color, 10%);
+   //                   color: $primary-color;
+   //                }
+   //             }
+
+   //             .search-trends-extras-options-closed {
+   //                display: none;
+   //             }
+
+   //             .search-trends-extras-options-open {
+   //                background-color: #fff;
+   //                padding: 0.5rem;
+   //                border-radius: 5px;
+   //                display: flex;
+   //                flex-direction: column;
+   //                text-align: left;
+   //                font-weight: 400;
+   //                position: absolute;
+   //                // top: 0;
+   //                right: 2%;
+   //                height: 32vh;
+   //                width: 55%;
+   //                z-index: 6;
+   //                box-shadow: 2px 2px 2px 0px #ccc;
+
+   //                a {
+   //                   margin: 0.5rem 0;
+   //                   width: 100%;
+   //                   display: inline-block;
+   //                   padding: 0.3rem;
+
+   //                   &:hover {
+   //                      background-color: lighten($secondary-color, 70%);
+   //                   }
+   //                }
+   //             }
+
+   //             &:hover {
+   //             }
+   //          }
+   //       }
+   //    }
+   // }
+}

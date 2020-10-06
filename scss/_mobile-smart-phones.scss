@@ -1,0 +1,66 @@
+@media screen and (max-width: 400px) {
+   // Index Page
+   .welcome {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      overflow: hidden;
+
+      .intro {
+         margin-top: 3rem;
+
+         h3 {
+            margin-top: 1rem;
+         }
+      }
+   }
+
+   .forms {
+      width: 70%;
+
+      .register-form-one,
+      .register-form-two,
+      .register-form-username {
+         background-color: #fff;
+         width: 100%;
+         position: relative;
+         display: none;
+         @include easeOut;
+         div {
+            width: 100%;
+
+            input,
+            button {
+               padding: 0.7rem 1rem;
+               margin: 0.3rem 0;
+               font-size: 1rem;
+               width: 100%;
+               border: none;
+               outline: none;
+               border-bottom: 2px solid lighten($secondary-color, 50%);
+               background-color: $light-color;
+            }
+
+            button {
+               background-color: $primary-color;
+               border: none;
+               color: #fff;
+               font-weight: bold;
+               margin-bottom: 2rem;
+               cursor: pointer;
+               @include easeOut;
+            }
+         }
+
+         small {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 15rem;
+         }
+      }
+   }
+}
