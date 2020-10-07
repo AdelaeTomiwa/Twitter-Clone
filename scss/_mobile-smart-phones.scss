@@ -1,4 +1,4 @@
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 490px) {
    // Index Page
    .welcome {
       display: flex;
@@ -62,5 +62,133 @@
             margin-bottom: 15rem;
          }
       }
+   }
+
+   // Header
+   header {
+      position: fixed;
+      top: 90%;
+      bottom: 0;
+      left: 0%;
+      width: 100%;
+      z-index: 10;
+      height: 7rem;
+
+      background-color: #fff;
+
+      .container {
+         width: 100%;
+         margin: 0;
+      }
+
+      .nav {
+         margin-right: 1rem;
+         background-color: inherit;
+         width: 100vw;
+         position: absolute;
+         left: 0%;
+         top: 0;
+
+         .twitter-icon {
+            display: none;
+         }
+
+         .nav-items {
+            width: 100vw;
+            // // margin-top: 5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            height: 5rem;
+
+            li {
+               a {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+               }
+
+               i {
+                  margin: 0 0.2rem;
+                  font-size: 1.2rem;
+                  cursor: pointer;
+                  padding: 0.2rem;
+                  width: 100%;
+               }
+            }
+
+            .fa-more,
+            .fa-bookmark,
+            .fa-user,
+            .fa-list-alt {
+               display: none;
+            }
+
+            h3 {
+               display: none;
+            }
+         }
+
+         .tweet-btn {
+            display: none;
+         }
+
+         .users {
+            position: fixed;
+            top: -17%;
+            left: 2%;
+            width: 10%;
+
+            img {
+               width: 50px;
+            }
+         }
+      }
+   }
+
+   // Main Home Page
+   .main {
+      margin-left: 0%;
+      width: 100%;
+   }
+
+   // Home Header and Input
+
+   .showcase {
+      grid-area: showcase;
+      border-right: 1px solid lighten($secondary-color, 70%);
+      height: 100vh;
+      position: relative;
+      width: 100%;
+
+      &-header {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         height: 3.5rem;
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+         padding: 0 2rem 1rem 2rem;
+         background-color: #fff;
+         position: fixed;
+         top: 0;
+         left: 0%;
+         width: 100%;
+         z-index: 6;
+
+         h3 {
+            margin-left: 4rem;
+         }
+      }
+
+      img {
+         width: 50px;
+      }
+   }
+
+   .tweet-input {
+      display: none;
+   }
+
+   .tweet-section {
+      margin-top: 3rem;
    }
 }
