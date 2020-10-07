@@ -1,0 +1,162 @@
+@media screen and (max-width: 490px) {
+   .profile-body {
+      // Header
+      header {
+         position: fixed;
+         top: 90%;
+         bottom: 0;
+         left: 0%;
+         width: 100%;
+         z-index: 10;
+         height: 7rem;
+
+         background-color: #fff;
+
+         .container {
+            width: 100%;
+            margin: 0;
+         }
+
+         .nav {
+            margin-right: 1rem;
+            background-color: inherit;
+            width: 100vw;
+            position: absolute;
+            left: 0%;
+            top: 0;
+
+            .twitter-icon {
+               display: none;
+            }
+
+            .nav-items {
+               width: 100vw;
+               // // margin-top: 5rem;
+               display: grid;
+               grid-template-columns: repeat(4, 1fr);
+               height: 5rem;
+
+               li {
+                  a {
+                     display: flex;
+                     align-items: center;
+                     justify-content: space-between;
+                  }
+
+                  i {
+                     margin: 0 0.2rem;
+                     font-size: 1.2rem;
+                     cursor: pointer;
+                     padding: 0.2rem;
+                     width: 100%;
+                  }
+               }
+
+               .fa-more,
+               .fa-bookmark,
+               .fa-user,
+               .fa-list-alt {
+                  display: none;
+               }
+
+               h3 {
+                  display: none;
+               }
+            }
+
+            .tweet-btn {
+               display: none;
+            }
+
+            .users {
+               position: fixed;
+               top: -17%;
+               left: 2%;
+               width: 10%;
+               display: none;
+
+               img {
+                  width: 50px;
+               }
+            }
+         }
+      }
+      // Profile Page
+
+      .main-profile {
+         margin-left: 0%;
+         width: 100%;
+      }
+      .profile {
+         width: 100%;
+         margin-bottom: 2.5rem;
+
+         .profile-header {
+            position: fixed;
+            top: 0;
+            left: 0%;
+            width: 100%;
+            z-index: 6;
+
+            i {
+               margin: 0 1.5rem 0 0;
+               font-size: 1.1rem;
+               color: lighten($primary-color, 1%);
+               cursor: pointer;
+               padding: 0.5rem;
+               border-radius: 50%;
+               @include easeOut;
+
+               &:hover {
+                  background-color: $light-color;
+                  color: $primary-color;
+               }
+            }
+
+            .profile-header-name {
+               padding-left: 0rem;
+            }
+         }
+
+         .profile-image {
+            .profile-img-icon {
+               position: absolute;
+               bottom: -50%;
+               left: 3%;
+            }
+         }
+         .profile-info {
+            .follow {
+               span {
+                  margin-right: 0.7rem;
+                  font-size: 0.9rem;
+               }
+            }
+
+            .profile-edit-btn {
+               width: 40%;
+               button {
+                  padding: 0.5rem 1rem;
+                  width: 100%;
+               }
+            }
+         }
+
+         .profile-content {
+            .profile-tweet-section {
+               .profile-tweet {
+                  &-head {
+                     .extra-options-open {
+                        display: flex;
+                        flex-direction: column;
+                        right: 2%;
+                        height: 45%;
+                        width: 70%;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

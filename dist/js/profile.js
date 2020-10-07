@@ -632,6 +632,9 @@ document.querySelector('.edit-profile-btn').addEventListener('click', () => {
       const darkOverlay = document.querySelector('.dark-overlay');
       darkOverlay.style.display = 'none';
 
+      // Make the body Oveflow Visible
+      document.body.style.overflow = 'visible';
+
       document.body.removeChild(editProfileSection);
 
       // Change The Name in The UI
