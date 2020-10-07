@@ -1,8 +1,12 @@
 .profile-search-tweet {
    grid-area: profile-search-tweet;
-   // height: 100vh;
+   max-height: 100%;
    position: relative;
    width: 100%;
+
+   .container {
+      width: 90%;
+   }
 
    &-header {
       display: flex;
@@ -59,100 +63,96 @@
       }
    }
 
-   // .twitter-trends {
-   //    margin-top: 4rem;
-   //    background-color: $light-color;
-   //    border-radius: 20px;
+   .interested {
+      background-color: $light-color;
+      border-radius: 20px;
+      width: 100%;
+      margin-top: 1.5rem;
 
-   //    .twitter-trend-head {
-   //       display: flex;
-   //       align-items: center;
-   //       justify-content: space-between;
-   //       padding: 0.5rem 1rem;
-   //       border-bottom: 1px solid lighten($secondary-color, 70%);
+      &-header {
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+         padding: 0.5rem;
+         h3 {
+            margin: 0.3rem 0;
+            text-align: left;
+         }
+      }
 
-   //       i {
-   //          color: $primary-color;
-   //          margin: 0 0.2rem;
-   //          font-size: 1.2rem;
-   //          cursor: pointer;
-   //          padding: 0.5rem;
-   //          border-radius: 50%;
-   //          @include easeOut;
+      &-content {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+         padding: 0.5rem;
+         cursor: pointer;
+         @include easeOut;
 
-   //          &:hover {
-   //             background-color: darken($light-color, 10%);
-   //          }
-   //       }
-   //    }
+         i {
+            color: $primary-color;
+         }
 
-   //    .twitter-trend-section {
-   //       width: 100%;
-   //       .trend {
-   //          position: relative;
-   //          display: flex;
-   //          align-items: flex-start;
-   //          justify-content: space-between;
-   //          width: 100%;
-   //          margin: 0.5rem 0;
-   //          padding: 0.3rem;
-   //          cursor: pointer;
-   //          height: 100%;
-   //          border-bottom: 1px solid lighten($secondary-color, 70%);
+         button {
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            border: 1px solid $primary-color;
+            outline: none;
+            background-color: #fff;
+            color: $primary-color;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            @include easeOut;
 
-   //          @include easeOut;
+            &:hover {
+               background-color: $light-color;
+            }
+         }
+         img {
+            width: 50px;
+         }
 
-   //          .search-trends-extras {
-   //             i {
-   //                color: lighten($secondary-color, 50%);
-   //                margin: 0 0.2rem;
-   //                cursor: pointer;
-   //                padding: 0.5rem;
-   //                border-radius: 50%;
-   //                @include easeOut;
+         &:hover {
+            background-color: lighten($secondary-color, 70%);
+         }
+      }
 
-   //                &:hover {
-   //                   background-color: darken($light-color, 10%);
-   //                   color: $primary-color;
-   //                }
-   //             }
+      .show-more-interested {
+         button {
+            border: none;
+            outline: none;
+            background-color: inherit;
+            color: $primary-color;
+            // font-weight: bold;
+            font-size: 1rem;
+            width: 100%;
+            padding: 1rem 0.5rem;
+            text-align: left;
+            cursor: pointer;
+            @include easeOut;
 
-   //             .search-trends-extras-options-closed {
-   //                display: none;
-   //             }
+            &:hover {
+               background-color: lighten($secondary-color, 70%);
+               border-radius: 0 0 20px 20px;
+            }
+         }
+      }
+   }
 
-   //             .search-trends-extras-options-open {
-   //                background-color: #fff;
-   //                padding: 0.5rem;
-   //                border-radius: 5px;
-   //                display: flex;
-   //                flex-direction: column;
-   //                text-align: left;
-   //                font-weight: 400;
-   //                position: absolute;
-   //                // top: 0;
-   //                right: 2%;
-   //                height: 32vh;
-   //                width: 55%;
-   //                z-index: 6;
-   //                box-shadow: 2px 2px 2px 0px #ccc;
+   .twitter-trends {
+      margin-top: 2rem;
+   }
 
-   //                a {
-   //                   margin: 0.5rem 0;
-   //                   width: 100%;
-   //                   display: inline-block;
-   //                   padding: 0.3rem;
+   .profile-footer {
+      small {
+         margin: 0 0.5rem;
 
-   //                   &:hover {
-   //                      background-color: lighten($secondary-color, 70%);
-   //                   }
-   //                }
-   //             }
+         a {
+            &:hover {
+               @include easeOut;
 
-   //             &:hover {
-   //             }
-   //          }
-   //       }
-   //    }
-   // }
+               text-decoration: underline;
+            }
+         }
+      }
+   }
 }

@@ -77,7 +77,7 @@
          position: fixed;
          top: 0;
          left: 14%;
-         width: 54%;
+         width: 50%;
 
          .profile-header-name {
             cursor: pointer;
@@ -106,6 +106,112 @@
          top: 0;
          left: 14%;
          width: 56%;
+      }
+   }
+
+   .profile-search-tweet {
+      .container {
+         width: 90%;
+      }
+
+      &-header {
+         width: 35%;
+         position: fixed;
+         top: 0;
+         left: 65%;
+      }
+
+      .interested {
+         background-color: $light-color;
+         border-radius: 20px;
+         width: 100%;
+         margin-top: 1.5rem;
+
+         &-header {
+            border-bottom: 1px solid lighten($secondary-color, 70%);
+            padding: 0.5rem;
+            h3 {
+               margin: 0.3rem 0;
+               text-align: left;
+            }
+         }
+
+         &-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid lighten($secondary-color, 70%);
+            padding: 0.5rem;
+            cursor: pointer;
+            @include easeOut;
+
+            i {
+               color: $primary-color;
+            }
+
+            button {
+               border-radius: 20px;
+               padding: 0.5rem 1rem;
+               border: 1px solid $primary-color;
+               outline: none;
+               background-color: #fff;
+               color: $primary-color;
+               font-size: 0.9rem;
+               font-weight: bold;
+               cursor: pointer;
+               @include easeOut;
+
+               &:hover {
+                  background-color: $light-color;
+               }
+            }
+            img {
+               width: 50px;
+            }
+
+            &:hover {
+               background-color: lighten($secondary-color, 70%);
+            }
+         }
+
+         .show-more-interested {
+            button {
+               border: none;
+               outline: none;
+               background-color: inherit;
+               color: $primary-color;
+               // font-weight: bold;
+               font-size: 1rem;
+               width: 100%;
+               padding: 1rem 0.5rem;
+               text-align: left;
+               cursor: pointer;
+               @include easeOut;
+
+               &:hover {
+                  background-color: lighten($secondary-color, 70%);
+                  border-radius: 0 0 20px 20px;
+               }
+            }
+         }
+      }
+
+      .twitter-trends {
+         margin-top: 2rem;
+      }
+
+      .profile-footer {
+         small {
+            margin: 0 0.5rem;
+
+            a {
+               &:hover {
+                  @include easeOut;
+
+                  text-decoration: underline;
+               }
+            }
+         }
       }
    }
 
@@ -168,6 +274,165 @@
       .profile-info {
          .profile-name-bio {
             margin-top: 2rem;
+         }
+      }
+   }
+
+   .profile-search-tweet {
+      grid-area: profile-search-tweet;
+      max-height: 100%;
+      position: relative;
+      width: 100%;
+
+      .container {
+         width: 90%;
+      }
+
+      &-header {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 3.5rem;
+         width: 40%;
+         padding: 1rem 1rem;
+         background-color: #fff;
+         position: fixed;
+         top: 0;
+         left: 62%;
+         z-index: 6;
+
+         div {
+            position: relative;
+            width: 100%;
+         }
+
+         input {
+            width: 100%;
+            padding: 0.7rem 3rem;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            background-color: $light-color;
+            font-size: 1rem;
+         }
+
+         i {
+            position: absolute;
+            top: 27%;
+            left: 3%;
+            color: lighten($secondary-color, 40%);
+         }
+      }
+
+      .twitter-trends-images {
+         margin: 4rem 0.5rem 0 0.5rem;
+         display: grid;
+         grid-gap: 2px;
+         grid-template-columns: repeat(3, 1fr);
+         background-color: $light-color;
+         padding: 1rem;
+         border-radius: 20px;
+
+         .trends-image {
+            width: 100px;
+            cursor: pointer;
+            img {
+               width: 100px;
+               height: 80px;
+            }
+         }
+      }
+
+      .interested {
+         background-color: $light-color;
+         border-radius: 20px;
+         width: 100%;
+         margin-top: 1.5rem;
+
+         &-header {
+            border-bottom: 1px solid lighten($secondary-color, 70%);
+            padding: 0.5rem;
+            h3 {
+               margin: 0.3rem 0;
+               text-align: left;
+            }
+         }
+
+         &-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid lighten($secondary-color, 70%);
+            padding: 0.5rem;
+            cursor: pointer;
+            @include easeOut;
+
+            i {
+               color: $primary-color;
+            }
+
+            button {
+               border-radius: 20px;
+               padding: 0.5rem 1rem;
+               border: 1px solid $primary-color;
+               outline: none;
+               background-color: #fff;
+               color: $primary-color;
+               font-size: 0.9rem;
+               font-weight: bold;
+               cursor: pointer;
+               @include easeOut;
+
+               &:hover {
+                  background-color: $light-color;
+               }
+            }
+            img {
+               width: 50px;
+            }
+
+            &:hover {
+               background-color: lighten($secondary-color, 70%);
+            }
+         }
+
+         .show-more-interested {
+            button {
+               border: none;
+               outline: none;
+               background-color: inherit;
+               color: $primary-color;
+               // font-weight: bold;
+               font-size: 1rem;
+               width: 100%;
+               padding: 1rem 0.5rem;
+               text-align: left;
+               cursor: pointer;
+               @include easeOut;
+
+               &:hover {
+                  background-color: lighten($secondary-color, 70%);
+                  border-radius: 0 0 20px 20px;
+               }
+            }
+         }
+      }
+
+      .twitter-trends {
+         margin-top: 2rem;
+      }
+
+      .profile-footer {
+         small {
+            margin: 0 0.5rem;
+
+            a {
+               &:hover {
+                  @include easeOut;
+
+                  text-decoration: underline;
+               }
+            }
          }
       }
    }
@@ -272,6 +537,47 @@
       margin-left: 14%;
       grid-template-columns: 6fr 1fr;
       width: 85%;
+   }
+
+   .profile {
+      grid-area: profile;
+      border-right: 1px solid lighten($secondary-color, 70%);
+      height: 100%;
+      position: relative;
+      width: 100%;
+
+      .profile-header {
+         display: flex;
+         align-items: center;
+         justify-content: flex-start;
+         height: 3.5rem;
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+         border-right: 1px solid lighten($secondary-color, 70%);
+         padding: 1rem 2rem;
+         background-color: #fff;
+         position: fixed;
+         width: 73%;
+         z-index: 6;
+         cursor: pointer;
+
+         i {
+            margin: 0 4rem 0 0;
+            font-size: 1.1rem;
+            color: lighten($primary-color, 1%);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            @include easeOut;
+
+            &:hover {
+               background-color: $light-color;
+               color: $primary-color;
+            }
+         }
+         .profile-header-name {
+            cursor: pointer;
+         }
+      }
    }
 
    .showcase {

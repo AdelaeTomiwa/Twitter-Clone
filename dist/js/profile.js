@@ -16,6 +16,8 @@ class UI {
       // Set the Title of the Profiile Page to the name
       document.title = `${name} (@${username}) / Twitter`;
 
+      // document.URL = `twitte.com/${name}`;
+
       // Set Profile Header Name
       const profileHeaderName = document.querySelector(
          '.profile-header-name h3'
