@@ -6,6 +6,9 @@
 @import 'profile-search-tweets';
 @import 'explore';
 @import 'explore_follow';
+@import 'notification';
+@import 'notification-search';
+
 @import 'forms';
 
 body {
@@ -159,5 +162,4 @@ header {
 @import 'home_mobile_smart_phones';
 @import 'profile_mobile_smart_phones';
 @import 'explore_mobile_smart_phones';
-@import 'notification';
 @import '../test';
