@@ -17,23 +17,6 @@ class UI {
       UI.addExtras();
 
       UI.displaySearchExtras();
-
-      // // Bring in Menu to Tweets
-      // const extraMenus = document.querySelectorAll('.extra');
-      // // Convert to Array
-      // extraMenus.forEach((extraMenu) => {
-      //    extraMenu.addEventListener('click', () => {
-      //       // Change the Icon to Cheron up
-      //       extraMenu.classList.toggle('fa-chevron-up');
-      //       // Grab the Ul and display it on the screen
-      //       const options = document.querySelectorAll('.extra-options-closed');
-      //       // Convert all to Array
-      //       options.forEach((option) => {
-      //          option.classList.toggle('extra-options-open');
-      //       });
-      //       // options.classList.toggle('extra-options-open');
-      //    });
-      // });
    }
 
    static displayUsername() {
@@ -55,6 +38,10 @@ class UI {
       // Grab the Username of the Person
       const username = Storage.getUsername();
 
+      // Time Function
+      const today = new Date();
+      const hour = today.getHours();
+
       // Create a new Div
       const tweetDiv = document.createElement('div');
       tweetDiv.classList.add('tweet');
@@ -70,7 +57,7 @@ class UI {
                />
                <h4>${name}</h4>
                <p>@${username}</p>
-               <p>.15h</p>
+               <p>.${hour}h</p>
             </div>
          </a>
          <div>
@@ -223,6 +210,7 @@ class Storage {
 // Display Old Tweets
 document.addEventListener('DOMContentLoaded', UI.getTweets);
 document.addEventListener('DOMContentLoaded', UI.displayUsername());
+// document.addEventListener('DOMContentLoaded', UI.diplayTime());
 
 // Add Tweet
 // Selectors
@@ -257,13 +245,11 @@ function formSubmitted(e) {
    UI.clearFields();
 }
 
-// Delete Tweet
-// Bring in Menu to Tweets
-// const extraMenu = document.querySelector('.extra');
-// extraMenu.addEventListener('click', () => {
-//    // Change the Icon to Cheron up
-//    extraMenu.classList.toggle('fa-chevron-up');
-//    // Grab the Ul and display it on the screen
-//    const options = document.querySelector('.extra-options-closed');
-//    options.classList.toggle('extra-options-open');
-// });
+// // Time Function
+// function time() {
+//    const today = new Date();
+
+//    UI.diplayTime(today);
+// }
+
+// time();

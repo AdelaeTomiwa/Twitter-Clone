@@ -3,9 +3,6 @@
    // Headers
    header {
       position: fixed;
-
-      // top: 0;
-      // left: 4%;
       width: 10%;
 
       .nav {
@@ -62,12 +59,12 @@
    }
 
    .main {
-      margin-left: 14%;
+      margin-left: 10%;
       width: 85%;
    }
 
    .main-profile {
-      margin-left: 14%;
+      margin-left: 10%;
       width: 85%;
    }
 
@@ -77,8 +74,8 @@
          padding: 1rem 2rem;
          position: fixed;
          top: 0;
-         left: 14%;
-         width: 50%;
+         left: 10%;
+         width: 55%;
 
          .profile-header-name {
             cursor: pointer;
@@ -105,7 +102,7 @@
       &-header {
          position: fixed;
          top: 0;
-         left: 14%;
+         left: 10%;
          width: 56%;
       }
    }
@@ -245,6 +242,29 @@
             }
          }
       }
+   }
+
+   // Explore Page
+
+   .main-explore {
+      margin-left: 10%;
+   }
+
+   .explore {
+      &-header {
+         position: fixed;
+         top: 0;
+         left: 10%;
+         width: 53%;
+      }
+   }
+
+   .explore-follow {
+      position: fixed;
+      right: 0;
+      width: 37%;
+      height: 100vh;
+      padding: 1rem;
    }
 }
 
@@ -557,7 +577,7 @@
          padding: 1rem 2rem;
          background-color: #fff;
          position: fixed;
-         width: 73%;
+         width: 77%;
          z-index: 6;
          cursor: pointer;
 
@@ -591,6 +611,33 @@
          left: 14%;
          width: 73%;
       }
+   }
+
+   // Explore Page
+   .main-explore {
+      margin-left: 10%;
+      grid-template-columns: 6fr 1fr;
+      width: 85%;
+   }
+
+   .explore {
+      &-header {
+         position: fixed;
+         top: 0;
+         left: 10%;
+         width: 73%;
+      }
+   }
+
+   .explore-follow {
+      display: none;
+   }
+
+   // Tweet Btn Form
+   .tweet-btn-form {
+      width: 60%;
+      top: 0;
+      left: 20%;
    }
 }
 
@@ -693,6 +740,102 @@
       }
    }
 
+   // Tweet Btn Form
+   .tweet-btn-form {
+      width: 100%;
+      height: 100vh;
+      margin-top: 0;
+      border-radius: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      background-color: #fff;
+      padding: 0.5rem 1rem;
+
+      &-head {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+         padding: 0.5rem 1rem;
+
+         h3 {
+            color: $primary-color;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 30px;
+            @include easeOut;
+
+            &:hover {
+               background-color: $light-color;
+            }
+         }
+      }
+
+      .tweet-btn-input {
+         background-color: #fff;
+         margin-top: 0.5rem;
+         padding: 0.5rem 1rem;
+
+         .form {
+            div {
+               display: flex;
+
+               input {
+                  border: none;
+                  outline: none;
+                  font-size: 1.2rem;
+                  margin-left: 1rem;
+                  width: 100%;
+               }
+            }
+
+            .tweet-btn-utilities {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               margin-top: 0.2rem;
+               margin-left: 3rem;
+
+               i {
+                  margin: 0 0.2rem;
+                  font-size: 1.2rem;
+                  font-weight: 100;
+                  color: lighten($primary-color, 1%);
+                  cursor: pointer;
+                  padding: 0.5rem;
+                  border-radius: 50%;
+                  @include easeOut;
+
+                  &:hover {
+                     background-color: $light-color;
+                     color: $primary-color;
+                  }
+               }
+
+               button {
+                  background-color: lighten($primary-color, 20%);
+                  color: #fff;
+                  border-radius: 25px;
+                  padding: 0.8rem 1rem;
+                  border: none;
+                  outline: none;
+                  font-size: 1rem;
+                  font-weight: bolder;
+                  margin-top: 1rem;
+                  cursor: pointer;
+                  @include easeOut;
+               }
+            }
+         }
+
+         img {
+            width: 50px;
+         }
+      }
+   }
+
    .showcase {
       position: relative;
       width: 100%;
@@ -703,6 +846,21 @@
          top: 0;
          left: 14%;
          width: 86%;
+      }
+   }
+
+   // Explore Page
+   .main-explore {
+      margin-left: 13%;
+      grid-template-columns: 1fr;
+      width: 85%;
+   }
+   .explore {
+      &-header {
+         position: fixed;
+         top: 0;
+         left: 13%;
+         width: 73%;
       }
    }
 }

@@ -462,6 +462,36 @@ class UI {
       const likeSection = document.querySelector('.profile-likes-section');
       likeSection.style.display = 'block';
    }
+
+   static followBtnClicked(e) {
+      // Make the Follow Btn Displayed None
+      e.style.display = 'none';
+      // Make the Followed Btn Displayed Block
+      e.nextElementSibling.style.display = 'Block';
+   }
+
+   // Followed Btn Clicked
+   static followedBtnClicked(e) {
+      // Make the Followed Btn Displayed None
+      e.style.display = 'none';
+      // Make the Follow Btn Displayed Block
+      e.previousElementSibling.style.display = 'Block';
+   }
+
+   // Display the Profile Extra
+   static displayProfileExtras() {
+      // Grab all I tags
+      const chevronsDown = document.querySelectorAll(
+         '.search-trends-extras .fa-chevron-down'
+      );
+      chevronsDown.forEach((chevronDown) => {
+         chevronDown.addEventListener('click', (e) => {
+            console.log('yes');
+            const extraOptions = e.target.nextElementSibling;
+            extraOptions.classList.toggle('search-trends-extras-options-open');
+         });
+      });
+   }
 }
 
 // Storage
@@ -526,6 +556,7 @@ document.addEventListener(
    'DOMContentLoaded',
    UI.displayTweetsForMediaFromLocalStorage()
 );
+document.addEventListener('DOMContentLoaded', UI.displayProfileExtras);
 // Events for going back to the home page
 document.querySelector('.profile-header i').addEventListener('click', () => {
    location = 'home.html';
@@ -610,7 +641,6 @@ document.querySelector('.edit-profile-btn').addEventListener('click', () => {
       document.body.removeChild(editProfileSection);
    });
 
-   const editProfileForm = document.querySelector('.edit-profile-form');
    const saveProfileBtn = document.querySelector('.save-profile-btn');
    const nameInput = document.querySelector('#edit-name');
    const bioInput = document.querySelector('#edit-bio');
@@ -653,8 +683,6 @@ tweetBtn.addEventListener('click', (e) => {
 const tweetRepliesBtn = document.querySelector('.tweets-replies-content');
 tweetRepliesBtn.addEventListener('click', (e) => {
    UI.displayTweetsRepliesPage(e);
-
-   // UI.displayTweetsForTweetsRepliesFromLocalStorage();
 });
 
 // Media Btn Function
@@ -669,4 +697,22 @@ likeBtn.addEventListener('click', (e) => {
    UI.displayLikesPage(e);
 });
 
-//
+//Follow Function
+const followBtns = document.querySelectorAll('.follow-interested-btn');
+followBtns.forEach((followBtn) => {
+   followBtn.addEventListener('click', followBtnClicked);
+
+   function followBtnClicked(e) {
+      UI.followBtnClicked(e.target);
+   }
+});
+
+//Followed Function
+const followedBtns = document.querySelectorAll('.followed-interested-btn');
+followedBtns.forEach((followedBtn) => {
+   followedBtn.addEventListener('click', followedBtnClicked);
+
+   function followedBtnClicked(e) {
+      UI.followedBtnClicked(e.target);
+   }
+});

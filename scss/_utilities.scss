@@ -174,3 +174,18 @@ li {
       transform: rotate(-45deg) translate(2px, -5px);
    }
 }
+
+.main-footer {
+   margin-top: 0.5rem;
+   small {
+      margin: 0 0.5rem;
+
+      a {
+         &:hover {
+            @include easeOut;
+
+            text-decoration: underline;
+         }
+      }
+   }
+}

@@ -1,0 +1,128 @@
+.main-notification {
+   margin-left: 20%;
+   display: grid;
+   grid-template-areas: 'notification notification-search';
+   grid-template-columns: 2fr 1fr;
+   width: 80%;
+   height: 100%;
+}
+
+.notification {
+   border-right: 1px solid lighten($secondary-color, 70%);
+
+   &-headers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      width: 53%;
+      z-index: 6;
+      background-color: #fff;
+
+      .notification-header {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         width: 100%;
+         padding: 1rem 2rem;
+
+         h2 {
+            font-weight: bolder;
+         }
+
+         i {
+            padding: 0.5rem;
+            border-radius: 50%;
+            color: $primary-color;
+            cursor: pointer;
+            @include easeOut;
+
+            &:hover {
+               background-color: $light-color;
+               color: $primary-color;
+            }
+         }
+      }
+
+      .notification-btns {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         text-align: center;
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+         width: 100%;
+
+         div {
+            padding: 1rem 0;
+            cursor: pointer;
+            @include easeOut;
+
+            &:hover {
+               background-color: $light-color;
+            }
+         }
+
+         .notification-all-btn {
+            border-bottom: 2px solid $primary-color;
+            color: $primary-color;
+         }
+      }
+   }
+
+   .notification-contents {
+      margin-top: 7.6rem;
+
+      .notification-content {
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+         padding: 0.5rem 3rem;
+         cursor: pointer;
+         @include easeOut;
+
+         &-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            div {
+               margin-right: 0.7rem;
+            }
+
+            i {
+               font-size: 1.8rem;
+               color: $primary-color;
+
+               &.heart {
+                  color: $danger-color;
+               }
+
+               &.retweet {
+                  color: $success-color;
+               }
+
+               &.star {
+                  color: $purple-color;
+               }
+            }
+
+            img {
+               width: 30px;
+               border-radius: 50%;
+               @include easeOut;
+
+               &:hover {
+                  opacity: 0.7;
+               }
+            }
+         }
+
+         &-text {
+            margin-left: 2rem;
+         }
+
+         &:hover {
+            background-color: lighten($secondary-color, 70%);
+         }
+      }
+   }
+}

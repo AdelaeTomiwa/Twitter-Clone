@@ -4,6 +4,8 @@
 @import 'search-tweets';
 @import 'profile';
 @import 'profile-search-tweets';
+@import 'explore';
+@import 'explore_follow';
 @import 'forms';
 
 body {
@@ -70,6 +72,7 @@ header {
 
       li {
          color: #333;
+         background-color: #fff;
 
          a {
             display: flex;
@@ -155,3 +158,6 @@ header {
 @import 'mobile_smart_phones';
 @import 'home_mobile_smart_phones';
 @import 'profile_mobile_smart_phones';
+@import 'explore_mobile_smart_phones';
+@import 'notification';
+@import '../test';
