@@ -1,0 +1,22 @@
+@media screen and (max-width: 490px) {
+   .main-notification {
+      margin-left: 0%;
+      width: 100%;
+   }
+
+   .notification {
+      grid-area: notification;
+      border-right: 1px solid lighten($secondary-color, 70%);
+
+      &-headers {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+
+         h3 {
+            margin-left: 2rem;
+         }
+      }
+   }
+}

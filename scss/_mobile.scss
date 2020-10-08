@@ -113,7 +113,8 @@
       }
 
       &-header {
-         width: 35%;
+         width: 28%;
+         margin-left: 1rem;
          position: fixed;
          top: 0;
          left: 65%;
@@ -266,6 +267,37 @@
       height: 100vh;
       padding: 1rem;
    }
+
+   // Notification
+   .main-notification {
+      margin-left: 10%;
+      display: grid;
+      grid-template-areas: 'notification notification-search';
+      grid-template-columns: 2fr 1fr;
+      width: 80%;
+      height: 100%;
+   }
+
+   .notification-search {
+      grid-area: notification-search;
+      position: fixed;
+      top: 0;
+      right: 1%;
+      width: 35%;
+
+      .search-tweet-header {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 3.5rem;
+         width: 34%;
+         padding: 1rem 1rem;
+         background-color: #fff;
+         position: fixed;
+         top: 0;
+         z-index: 6;
+      }
+   }
 }
 
 // Medium-Large
@@ -314,12 +346,12 @@
          align-items: center;
          justify-content: center;
          height: 3.5rem;
-         width: 40%;
+         width: 35%;
          padding: 1rem 1rem;
          background-color: #fff;
          position: fixed;
          top: 0;
-         left: 62%;
+         left: 58%;
          z-index: 6;
 
          div {
@@ -633,6 +665,37 @@
       display: none;
    }
 
+   .main-notification {
+      margin-left: 10%;
+      display: grid;
+      grid-template-areas: 'notification notification-search';
+      grid-template-columns: 6fr 1fr;
+      width: 85%;
+      height: 100%;
+   }
+
+   .notification {
+      grid-area: notification;
+      border-right: 1px solid lighten($secondary-color, 70%);
+
+      &-headers {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         position: fixed;
+         top: 0;
+         width: 73%;
+         z-index: 6;
+         background-color: #fff;
+         border-right: 1px solid lighten($secondary-color, 70%);
+      }
+   }
+
+   .notification-search {
+      display: none;
+   }
+
    // Tweet Btn Form
    .tweet-btn-form {
       width: 60%;
@@ -860,7 +923,26 @@
          position: fixed;
          top: 0;
          left: 13%;
-         width: 73%;
+         width: 85%;
+      }
+   }
+
+   .main-notification {
+      margin-left: 13%;
+      grid-template-columns: 1fr;
+      width: 85%;
+      height: 100%;
+   }
+
+   .notification {
+      grid-area: notification;
+      border-right: 1px solid lighten($secondary-color, 70%);
+
+      &-headers {
+         position: fixed;
+         top: 0;
+         left: 13%;
+         width: 85%;
       }
    }
 }
