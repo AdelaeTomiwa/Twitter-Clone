@@ -1,0 +1,36 @@
+@media screen and (max-width: 490px) {
+   .message-body {
+      // Header
+      header .nav .tweet-btn {
+         display: none;
+         position: absolute;
+      }
+   }
+
+   .messages-sections {
+      margin-left: 0%;
+      display: flex;
+
+      .messages-list {
+         &-header {
+            width: 100%;
+
+            h3 {
+               margin-left: 4rem;
+            }
+
+            i {
+               font-size: 1.5rem;
+               background-color: lighten($primary-color, 1%);
+               color: #fff;
+               padding: 1rem;
+               @include easeOut;
+               position: fixed;
+               bottom: 11%;
+               right: 3%;
+               z-index: 6;
+            }
+         }
+      }
+   }
+}

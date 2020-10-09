@@ -298,6 +298,22 @@
          z-index: 6;
       }
    }
+
+   // Message Page
+
+   .messages-sections {
+      margin-left: 10%;
+
+      .messages-list {
+         width: 35%;
+         position: relative;
+
+         &-header {
+            width: 32%;
+            border-right: 3px solid lighten($secondary-color, 70%);
+         }
+      }
+   }
 }
 
 // Medium-Large
@@ -486,6 +502,18 @@
                   text-decoration: underline;
                }
             }
+         }
+      }
+   }
+
+   // Message Page
+
+   .messages-sections {
+      .messages-list {
+         width: 45%;
+
+         &-header {
+            width: 37%;
          }
       }
    }
@@ -701,6 +729,29 @@
       width: 60%;
       top: 0;
       left: 20%;
+   }
+
+   // Message Page
+
+   .message-body {
+      overflow: scroll;
+   }
+
+   .messages-sections {
+      margin-left: 10%;
+
+      .messages-list {
+         width: 80%;
+         border-right: 3px solid lighten($secondary-color, 70%);
+
+         &-header {
+            width: 72%;
+         }
+      }
+
+      .messages-chat {
+         display: none;
+      }
    }
 }
 
@@ -943,6 +994,20 @@
          top: 0;
          left: 13%;
          width: 85%;
+      }
+   }
+
+   // Message Page
+
+   .messages-sections {
+      margin-left: 13%;
+
+      .messages-list {
+         width: 100%;
+
+         &-header {
+            width: 91%;
+         }
       }
    }
 }

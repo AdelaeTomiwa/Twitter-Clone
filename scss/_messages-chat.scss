@@ -1,0 +1,37 @@
+.messages-chat {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   width: 65%;
+   border-left: 3px solid lighten($secondary-color, 70%);
+   height: 100%;
+   .empty-content {
+      h3,
+      p {
+         margin-bottom: 1rem;
+      }
+
+      p {
+         color: lighten($secondary-color, 40%);
+      }
+
+      button {
+         background-color: lighten(#3393d4, 10%);
+         color: #fff;
+         border-radius: 25px;
+         padding: 0.8rem 1rem;
+         border: none;
+         outline: none;
+         font-size: 1rem;
+         font-weight: bolder;
+         margin-top: 1rem;
+         cursor: pointer;
+         transition: all 0.5s ease-out;
+
+         &:hover {
+            background-color: #3393d4;
+         }
+      }
+   }
+}

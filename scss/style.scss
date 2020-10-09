@@ -8,7 +8,8 @@
 @import 'explore_follow';
 @import 'notification';
 @import 'notification-search';
-
+@import 'messages';
+@import 'messages-chat';
 @import 'forms';
 
 body {
@@ -163,4 +164,5 @@ header {
 @import 'profile_mobile_smart_phones';
 @import 'explore_mobile_smart_phones';
 @import 'notification_mobile_smart_phones';
+@import 'messages_mobile_smart_phones';
 @import '../test';
