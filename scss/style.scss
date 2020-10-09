@@ -12,6 +12,8 @@
 @import 'messages-chat';
 @import 'bookmarks';
 @import 'bookmarks_search_tweets';
+@import 'lists';
+@import 'list_search_tweets';
 @import 'forms';
 
 body {
@@ -168,4 +170,5 @@ header {
 @import 'notification_mobile_smart_phones';
 @import 'messages_mobile_smart_phones';
 @import 'bookmarks_mobile_smart_phones';
+@import 'list_mobile_smart_phones';
 @import '../test';

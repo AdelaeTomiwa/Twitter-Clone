@@ -357,6 +357,38 @@
          z-index: 6;
       }
    }
+
+   // List Page
+   .main-list {
+      margin-left: 10%;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+   }
+
+   .list {
+      width: 85%;
+
+      &-header {
+         position: fixed;
+         top: 0;
+         left: 10%;
+         width: 51%;
+      }
+   }
+
+   .list-trends {
+      position: fixed;
+      right: 0;
+      width: 37%;
+
+      .search-tweet-header {
+         width: 33%;
+         padding: 1rem 1rem;
+         background-color: #fff;
+         position: fixed;
+         top: 0;
+      }
+   }
 }
 
 // Medium-Large
@@ -648,7 +680,7 @@
    }
 
    .main {
-      margin-left: 14%;
+      margin-left: 10%;
       grid-template-columns: 6fr 1fr;
       width: 85%;
    }
@@ -658,7 +690,7 @@
    }
 
    .main-profile {
-      margin-left: 14%;
+      margin-left: 10%;
       grid-template-columns: 6fr 1fr;
       width: 85%;
    }
@@ -680,7 +712,7 @@
          padding: 1rem 2rem;
          background-color: #fff;
          position: fixed;
-         width: 77%;
+         width: 72%;
          z-index: 6;
          cursor: pointer;
 
@@ -711,7 +743,7 @@
          border-right: 1px solid lighten($secondary-color, 70%);
          position: fixed;
          top: 0;
-         left: 14%;
+         left: 10%;
          width: 73%;
       }
    }
@@ -823,6 +855,28 @@
    }
 
    .bookmark-search-tweets {
+      display: none;
+   }
+
+   // List Page
+   .main-list {
+      margin-left: 10%;
+      display: grid;
+      grid-template-columns: 6fr 1fr;
+      width: 85%;
+   }
+
+   .list {
+      width: 100%;
+
+      &-header {
+         top: 0;
+         left: 10%;
+         width: 73%;
+      }
+   }
+
+   .list-trends {
       display: none;
    }
 }
@@ -1090,6 +1144,23 @@
       width: 85%;
    }
    .bookmarks {
+      &-header {
+         position: fixed;
+         top: 0;
+         left: 13%;
+         width: 85%;
+      }
+   }
+
+   // List Page
+   .main-list {
+      margin-left: 13%;
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 85%;
+   }
+
+   .list {
       &-header {
          position: fixed;
          top: 0;
