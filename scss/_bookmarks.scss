@@ -1,0 +1,36 @@
+.main-bookmarks {
+   display: grid;
+   margin-left: 20%;
+   grid-template-columns: 2fr 1fr;
+   width: 80%;
+}
+
+.bookmarks {
+   border-right: 1px solid lighten($secondary-color, 70%);
+
+   &-header {
+      width: 53%;
+      position: fixed;
+      padding: 0.5rem 2rem;
+      background-color: #fff;
+      border-bottom: 1px solid lighten($secondary-color, 70%);
+
+      p {
+         font-size: 0.8rem;
+      }
+   }
+
+   &-section {
+      margin-top: 4rem;
+      text-align: center;
+      // width: 100%;
+
+      h3 {
+         margin: 7rem 0 1rem 0;
+      }
+
+      p {
+         font-size: 1rem;
+      }
+   }
+}

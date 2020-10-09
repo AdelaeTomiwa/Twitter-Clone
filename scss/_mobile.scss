@@ -314,6 +314,49 @@
          }
       }
    }
+
+   // Bookmarks page
+   .main-bookmarks {
+      margin-left: 10%;
+      height: 100vh;
+   }
+
+   .bookmarks {
+      border-right: 1px solid lighten($secondary-color, 70%);
+
+      &-header {
+         width: 53%;
+         position: fixed;
+         padding: 0.5rem 2rem;
+         background-color: #fff;
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+
+         p {
+            font-size: 0.8rem;
+         }
+      }
+   }
+
+   .bookmark-search-tweets {
+      position: fixed;
+      right: 0;
+      width: 37%;
+      height: 100vh;
+      padding: 1rem;
+
+      .search-tweet-header {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 3.5rem;
+         width: 33%;
+         padding: 1rem 1rem;
+         background-color: #fff;
+         position: fixed;
+         top: 0;
+         z-index: 6;
+      }
+   }
 }
 
 // Medium-Large
@@ -753,6 +796,35 @@
          display: none;
       }
    }
+
+   .main-bookmarks {
+      margin-left: 10%;
+      display: grid;
+      grid-template-columns: 6fr 1fr;
+      width: 85%;
+      height: 100vh;
+   }
+
+   .bookmarks {
+      border-right: 1px solid lighten($secondary-color, 70%);
+
+      &-header {
+         width: 73%;
+         position: fixed;
+         padding: 0.5rem 2rem;
+         background-color: #fff;
+         border-right: 3px solid lighten($secondary-color, 70%);
+         border-bottom: 1px solid lighten($secondary-color, 70%);
+
+         p {
+            font-size: 0.8rem;
+         }
+      }
+   }
+
+   .bookmark-search-tweets {
+      display: none;
+   }
 }
 
 // Small Screen
@@ -1008,6 +1080,21 @@
          &-header {
             width: 91%;
          }
+      }
+   }
+
+   // Bookmark Page
+   .main-bookmarks {
+      margin-left: 13%;
+      grid-template-columns: 1fr;
+      width: 85%;
+   }
+   .bookmarks {
+      &-header {
+         position: fixed;
+         top: 0;
+         left: 13%;
+         width: 85%;
       }
    }
 }

@@ -1,0 +1,15 @@
+@media screen and (max-width: 490px) {
+   .bookmarks-body {
+      header .nav .users {
+         display: none;
+      }
+
+      header .nav .tweet-btn {
+         display: none;
+      }
+   }
+   .main-bookmarks {
+      margin-left: 0%;
+      width: 100%;
+   }
+}
