@@ -179,10 +179,17 @@
             }
 
             .like {
+               font-weight: lighter;
+
                &:hover {
                   background-color: lighten($danger-color, 30%);
                   color: $danger-color;
                }
+            }
+
+            .add-like {
+               color: $danger-color;
+               font-weight: bold;
             }
 
             .retweet {
@@ -190,6 +197,20 @@
                   background-color: lighten($success-color, 40%);
                   color: $success-color;
                }
+            }
+
+            .add-retweet {
+               color: $success-color;
+               font-weight: bold;
+            }
+
+            .comment {
+               font-weight: lighter;
+            }
+
+            .add-comment {
+               color: $primary-color;
+               font-weight: 400;
             }
          }
 

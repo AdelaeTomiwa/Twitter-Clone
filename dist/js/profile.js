@@ -138,7 +138,7 @@ class UI {
                </div>
 
                <div class="profile-tweet-body-utilities">
-                  <i class="fas fa-comment-alt"></i>
+                  <i class="fas fa-comment-alt comment"></i>
                   <i class="fas fa-retweet retweet"></i>
                   <i class="fas fa-heart like"></i>
                   <i class="fas fa-download"></i>
@@ -156,7 +156,15 @@ class UI {
 
       // Grab the I tags
       UI.addExtras();
+
+      UI.addLike();
+
+      UI.addRetweet();
+
+      UI.addComment();
    }
+
+
 
    // Display Tweets For Tweets and Reply Page
    static displayTweetsForTweetsRepliesFromLocalStorage() {
@@ -225,7 +233,7 @@ class UI {
                </div>
 
                <div class="profile-tweet-body-utilities">
-                  <i class="fas fa-comment-alt"></i>
+                  <i class="fas fa-comment-alt comment"></i>
                   <i class="fas fa-retweet retweet"></i>
                   <i class="fas fa-heart like"></i>
                   <i class="fas fa-download"></i>
@@ -309,7 +317,7 @@ class UI {
                </div>
 
                <div class="profile-tweet-body-utilities">
-                  <i class="fas fa-comment-alt"></i>
+                  <i class="fas fa-comment-alt comment"></i>
                   <i class="fas fa-retweet retweet"></i>
                   <i class="fas fa-heart like"></i>
                   <i class="fas fa-download"></i>
@@ -335,6 +343,36 @@ class UI {
          });
       });
    }
+
+      // Make the Like Color when the Heart Icon is clicked
+      static addLike(){
+         const hearts = document.querySelectorAll('.fa-heart');
+         hearts.forEach(heart =>{
+            heart.addEventListener('click', (e)=>{
+               heart.classList.toggle('add-like');
+            })
+         })
+      }
+   
+      // Make the Retweet Color when the Heart Icon is clicked
+      static addRetweet(){
+         const retweets = document.querySelectorAll('.fa-retweet');
+         retweets.forEach(retweet =>{
+            retweet.addEventListener('click', (e)=>{
+               retweet.classList.toggle('add-retweet');
+            })
+         })
+      }
+   
+      // Make the Comment Color when the Heart Icon is clicked
+      static addComment(){
+         const comments = document.querySelectorAll('.fa-comment-alt');
+         comments.forEach(comment =>{
+            comment.addEventListener('click', (e)=>{
+               comment.classList.toggle('add-comment');
+            })
+         })
+      }
 
    static displayTweetsPage(e) {
       // Add the Border to the Tweet Button

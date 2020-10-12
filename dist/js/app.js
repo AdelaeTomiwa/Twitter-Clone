@@ -17,6 +17,12 @@ class UI {
       UI.addExtras();
 
       UI.displaySearchExtras();
+
+      UI.addLike();
+
+      UI.addRetweet();
+
+      UI.addComment();
    }
 
    static displayUsername() {
@@ -41,6 +47,7 @@ class UI {
       // Time Function
       const today = new Date();
       const hour = today.getHours();
+
 
       // Create a new Div
       const tweetDiv = document.createElement('div');
@@ -117,7 +124,7 @@ class UI {
          </div>
 
          <div class="tweet-body-utilities">
-            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-comment-alt comment"></i>
             <i class="fas fa-retweet retweet"></i>
             <i class="fas fa-heart like"></i>
             <i class="fas fa-download"></i>
@@ -129,6 +136,9 @@ class UI {
       // Append it to the Tweet Section in the HTML
       const tweetSection = document.querySelector('.tweet-section');
       tweetSection.appendChild(tweetDiv);
+
+      
+     
    }
 
    static addExtras() {
@@ -140,6 +150,36 @@ class UI {
             extraOptions.classList.toggle('extra-options-open');
          });
       });
+   }
+
+   // Make the Like Color when the Heart Icon is clicked
+   static addLike(){
+      const hearts = document.querySelectorAll('.fa-heart');
+      hearts.forEach(heart =>{
+         heart.addEventListener('click', (e)=>{
+            heart.classList.toggle('add-like');
+         })
+      })
+   }
+
+   // Make the Retweet Color when the Heart Icon is clicked
+   static addRetweet(){
+      const retweets = document.querySelectorAll('.fa-retweet');
+      retweets.forEach(retweet =>{
+         retweet.addEventListener('click', (e)=>{
+            retweet.classList.toggle('add-retweet');
+         })
+      })
+   }
+
+   // Make the Comment Color when the Heart Icon is clicked
+   static addComment(){
+      const comments = document.querySelectorAll('.fa-comment-alt');
+      comments.forEach(comment =>{
+         comment.addEventListener('click', (e)=>{
+            comment.classList.toggle('add-comment');
+         })
+      })
    }
 
    // Display the Search Tweets Extra
@@ -244,12 +284,3 @@ function formSubmitted(e) {
    // Clear Fields
    UI.clearFields();
 }
-
-// // Time Function
-// function time() {
-//    const today = new Date();
-
-//    UI.diplayTime(today);
-// }
-
-// time();
